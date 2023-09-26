@@ -5,12 +5,12 @@ using TMPro;
 using UnityEngine;
 //using UnityEngine.InputSystem;
 
-public interface IInteractable
+public interface IInteractable 
 {
     string GetInteractPrompt();
     void OnInteract();
 }
-public class InteractionManager : MonoBehaviour
+public class InteractionManager : MonoBehaviour // Player에 넣어주기
 {
     public float checkRate = 0.05f;
     private float laskCheckTime;
@@ -60,7 +60,7 @@ public class InteractionManager : MonoBehaviour
         promptText.text = string.Format("<b>[E]<b> {0}", curInteractable.GetInteractPrompt());
     }
 
-    //public void OnInteractInput(InputAction.CallbackContext callbackContext)
+    //public void OnInteractInput(InputAction.CallbackContext callbackContext) // Player Interact에 설정해주기.
     //{
     //    if (callbackContext.phase == InputActionPhase.Started && curInteractable != null)
     //    {

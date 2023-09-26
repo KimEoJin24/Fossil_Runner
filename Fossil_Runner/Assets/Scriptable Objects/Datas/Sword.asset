@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1778d42b5b3dbd498ab3a6c2b3d5373, type: 3}
-  m_Name: Axe
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  displayName: "\uB0A1\uC740 \uB3C4\uB07C"
-  description: "\uB69D\uBC30\uAE30, \uC544... \uB098\uBB34 \uBCA0\uB294\uB370\uB9CC 
-    \uC0AC\uC6A9\uD574 \uC8FC\uC138\uC694."
+  displayName: "\uC9C1\uAC80"
+  description: "\uB204\uAC00 \uCE7C \uB4E4\uACE0 \uD611\uBC15\uD588\uB098\uC694?"
   type: 1
-  icon: {fileID: 21300000, guid: 06e8d836c76eb494db7ab3784ffcb0eb, type: 3}
+  icon: {fileID: 21300000, guid: 4f2f320a217307a48a107491b1d17ebb, type: 3}
   dropPrefab: {fileID: 0}
   canStack: 0
   maxStackAmount: 0
   consumables: []
-  equipPrefab: {fileID: 5682816296153812889, guid: c34fccc51b0f61e44a4af5e315bb60ca, type: 3}
+  equipPrefab: {fileID: 0}
