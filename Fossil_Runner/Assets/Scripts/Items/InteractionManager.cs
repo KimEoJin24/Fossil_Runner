@@ -60,7 +60,7 @@ public class InteractionManager : MonoBehaviour // Player에 넣어주기
         promptText.text = string.Format("<b>[E]<b> {0}", curInteractable.GetInteractPrompt());
     }
 
-    //public void OnInteractInput(InputAction.CallbackContext callbackContext)
+    //public void OnInteractInput(InputAction.CallbackContext callbackContext) // Player Interact에 설정해주기.
     //{
     //    if (callbackContext.phase == InputActionPhase.Started && curInteractable != null)
     //    {
