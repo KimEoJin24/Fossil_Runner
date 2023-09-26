@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1778d42b5b3dbd498ab3a6c2b3d5373, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  displayName: 
-  description: 
-  type: 0
-  icon: {fileID: 0}
+  displayName: "\uC9C1\uAC80"
+  description: "\uB204\uAC00 \uCE7C \uB4E4\uACE0 \uD611\uBC15\uD588\uB098\uC694?"
+  type: 1
+  icon: {fileID: 21300000, guid: 4f2f320a217307a48a107491b1d17ebb, type: 3}
   dropPrefab: {fileID: 0}
   canStack: 0
   maxStackAmount: 0
