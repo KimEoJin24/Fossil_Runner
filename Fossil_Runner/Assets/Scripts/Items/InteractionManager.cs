@@ -5,12 +5,12 @@ using TMPro;
 using UnityEngine;
 //using UnityEngine.InputSystem;
 
-public interface IInteractable
+public interface IInteractable 
 {
     string GetInteractPrompt();
     void OnInteract();
 }
-public class InteractionManager : MonoBehaviour
+public class InteractionManager : MonoBehaviour // Player에 넣어주기
 {
     public float checkRate = 0.05f;
     private float laskCheckTime;
