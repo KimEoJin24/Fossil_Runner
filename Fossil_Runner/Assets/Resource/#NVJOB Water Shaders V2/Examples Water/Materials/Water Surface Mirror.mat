@@ -251,7 +251,7 @@ Material:
     - _FoamColor: {r: 4.5956454, g: 4.9761763, b: 5.5908804, a: 1}
     - _FoamSoft: {r: 0.17, g: 0.25, b: 1.2, a: 0}
     - _MirrorColor: {r: 0.78300005, g: 0.75166595, b: 0.71722806, a: 0.5}
-    - _MirrorDepthColor: {r: 0.103773594, g: 0.09445918, b: 0.085662164, a: 0.5}
+    - _MirrorDepthColor: {r: 0, g: 0.83486557, b: 1, a: 0.5}
     - _ReflectColor: {r: 0.07605405, g: 0.084, b: 0.082864866, a: 1}
     - _SpecColor: {r: 0.4, g: 0.4, b: 0.3764706, a: 1}
     - _SpecularColor: {r: 0.5808823, g: 0.5808823, b: 0.5808823, a: 1}
