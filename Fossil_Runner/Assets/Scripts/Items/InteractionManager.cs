@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-//using UnityEngine.InputSystem;
+using UnityEngine.InputSystem;
 
 public interface IInteractable 
 {
@@ -60,15 +60,15 @@ public class InteractionManager : MonoBehaviour // Player에 넣어주기
         promptText.text = string.Format("<b>[E]<b> {0}", curInteractable.GetInteractPrompt());
     }
 
-    //public void OnInteractInput(InputAction.CallbackContext callbackContext) // Player Interact에 설정해주기.
-    //{
-    //    if (callbackContext.phase == InputActionPhase.Started && curInteractable != null)
-    //    {
-    //        curInteractable.OnInteract();
-    //        curInteractGameObject = null;
-    //        curInteractable = null;
-    //        promptText.gameObject.SetActive(false);
-    //    }
-    //}
+    public void OnInteractInput(InputAction.CallbackContext callbackContext) // Player Interact에 설정해주기.
+    {
+        if (callbackContext.phase == InputActionPhase.Started && curInteractable != null)
+        {
+            curInteractable.OnInteract();
+            curInteractGameObject = null;
+            curInteractable = null;
+            promptText.gameObject.SetActive(false);
+        }
+    }
 }
-    
+
