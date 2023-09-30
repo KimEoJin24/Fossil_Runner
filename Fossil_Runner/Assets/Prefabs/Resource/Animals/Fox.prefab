@@ -48,6 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  type: 1
+  mySelf: {fileID: 1573687122451091320}
+  dropItem:
+  - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
   health: 6
   walkSpeed: 20
   runSpeed: 50

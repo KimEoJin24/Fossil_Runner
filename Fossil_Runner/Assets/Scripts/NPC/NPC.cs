@@ -16,7 +16,19 @@ public enum AIState  //ai상태
 
 public class NPC : MonoBehaviour//, IDamagable
 {
+    public enum AnimalType
+    {
+        bear,
+        fox,
+        eagle,
+        dinosaur
+    }
     public PlayerController player;
+
+    public AnimalType type;
+    public GameObject mySelf;  //자기 자신을담는 변수
+    public List<GameObject> dropItem = new List<GameObject>();  //떨어트릴 아이템을 담는 변수
+    Vector3 itemPosition; //아이템을 떨어트리기 위한 위치
 
     [Header("Stats")]
     public int health;
@@ -256,18 +268,19 @@ public class NPC : MonoBehaviour//, IDamagable
         //    Debug.Log("몬스터 체력 : " + health);
         //}
         //if (health <= 0)
-            Die();
+        DropItem();
+        Die();
 
         StartCoroutine(DamageFlash());
     }
-    public void TakePhysicalDamage(int damageAmount)
-    {
-        health -= damageAmount;
-        if (health <= 0)
-            Die();
+    //public void TakePhysicalDamage(int damageAmount)
+    //{
+    //    health -= damageAmount;
+    //    if (health <= 0)
+    //        Die();
 
-        StartCoroutine(DamageFlash());
-    }
+    //    StartCoroutine(DamageFlash());
+    //}
 
     void Die()
     {
@@ -275,11 +288,31 @@ public class NPC : MonoBehaviour//, IDamagable
         //{
         //    Instantiate(dropOnDeath[x].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
         //}
+        if (type == AnimalType.bear)
+        {
+
+            ReSpwanManager.Instance.bearNum--;
+
+        }
 
         Destroy(gameObject);
     }
+    public void DropItem()
+    {
+        for (int i = 0; i < dropItem.Count; i++)
+        {
+            itemPosition = mySelf.transform.position + new Vector3(0, 5, 0);
+            //dropItem.Count;
+            int num = Random.Range(0, dropItem.Count);
+            GameObject go = Instantiate(dropItem[num], itemPosition, Quaternion.identity);
+            //Debug.Log(itemPosition);
+            go.GetComponent<Rigidbody>().AddForce(transform.up * 20, ForceMode.Impulse); //중력을 껏다가 키면 괜찮을 수도?
 
-    IEnumerator DamageFlash() //깜까이는 것임.
+            //랜덤으로 할려면 for문 돌려서하거나 효과를 주면 될듯
+        }
+    }
+
+        IEnumerator DamageFlash() //깜까이는 것임.
     {
         for (int x = 0; x < meshRenderers.Length; x++)
             meshRenderers[x].material.color = new Color(1.0f, 0.6f, 0.6f);
