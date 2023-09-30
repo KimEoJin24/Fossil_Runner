@@ -9,6 +9,10 @@ public class ReSpwanManager : MonoBehaviour
     public int bearNum;  //執給檜 熱
     public Transform bearRespwanPos;
 
+    public GameObject fox;
+    public int foxNum;  //執給檜 熱
+    public Transform foxRespwanPos;
+
 
 
     public PlayerController player;
@@ -27,12 +31,13 @@ public class ReSpwanManager : MonoBehaviour
         }
         Instance = this;
 
-        bearNum = 2;
+        //bearNum = 2;
     }
 
     private void Start()
     {
         StartSetBearNum();
+        StartSetFoxNum();
 
     }
 
@@ -41,18 +46,18 @@ public class ReSpwanManager : MonoBehaviour
     {
 
         UpdateBearNum();
+        UpdateFoxNum();
     }
 
     void BearRespwan()
     {
-        scale = Random.Range(1F, 2F);
+        scale = Random.Range(0.2f,1F);
         GameObject bears = Instantiate(bear, bearRespwanPos.position, Quaternion.identity);
         bears.GetComponent<NPC>().player = player;
         bears.transform.localScale = new Vector3(scale, scale, scale);
         // bearNum++;
 
     }
-
     public void BearDie()
     {
 
@@ -71,6 +76,38 @@ public class ReSpwanManager : MonoBehaviour
         {
             bearNum++;
             Invoke("BearRespwan", 4);
+
+
+        }
+    }
+
+    void FoxRespwan()
+    {
+        scale = Random.Range(0.2f, 1F);
+        GameObject foxs = Instantiate(fox, foxRespwanPos.position, Quaternion.identity);
+        foxs.GetComponent<NPC>().player = player;
+        foxs.transform.localScale = new Vector3(scale, scale, scale);
+        
+
+    }
+    public void FoxDie()
+    {
+
+        foxNum--;
+    }
+    public void StartSetFoxNum()
+    {
+        for (int i = 0; i < foxNum; i++)
+        {
+            FoxRespwan();
+        }
+    }
+    public void UpdateFoxNum()
+    {
+        if (foxNum < 2)
+        {
+            foxNum++;
+            Invoke("FoxRespwan", 4);
 
 
         }
