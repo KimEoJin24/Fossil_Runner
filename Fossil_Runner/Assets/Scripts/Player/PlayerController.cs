@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    Animator animator;
+    bool rDown;
+
     [Header("Movement")]
     public float moveSpeed;
     private Vector2 curMovementInput;
@@ -32,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        animator = GetComponentInChildren<Animator>();
         instance = this;
         _rigidbody = GetComponent<Rigidbody>();
     }
@@ -41,10 +45,16 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void Update()
+    {
+        rDown = Input.GetButton("Run");
+    }
+
     private void FixedUpdate()
     {
         Move();
     }
+
 
     private void LateUpdate()
     {
@@ -57,7 +67,17 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
-        dir *= moveSpeed;
+        if (rDown)
+        {
+          //  animator.SetBool("Run", true);  //캐릭터 상요할려면 지워주세요
+            dir *=2 * moveSpeed;
+        }
+        else
+        {
+          //  animator.SetBool("Run", false); //캐릭터 사용할려면 지워주세요
+            dir *=  moveSpeed;
+
+        }      
         dir.y = _rigidbody.velocity.y;
 
         _rigidbody.velocity = dir;
@@ -81,10 +101,12 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Performed)
         {
             curMovementInput = context.ReadValue<Vector2>();
+            //  animator.SetBool("Move", true);//캐릭터 사용할려면 지워주세요
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
             curMovementInput = Vector2.zero;
+            //   animator.SetBool("Move", false);//캐릭터 사용할려면 지워주세요
         }
     }
 
@@ -94,6 +116,8 @@ public class PlayerController : MonoBehaviour
         {
             if (IsGrounded())
             {
+                //   animator.SetBool("Run", false);//캐릭터 사용할려면 지워주세요
+                //   animator.SetBool("Move", false);//캐릭터 사용할려면 지워주세요
                 _rigidbody.AddForce(Vector2.up*jumpForce, ForceMode.Impulse);
             }
         }
