@@ -13,7 +13,8 @@ public class NPC_Boss : MonoBehaviour
         Fleeing
     }
 
-
+    public AudioSource mySfx;
+    public AudioClip skill4;
 
     // public Player player;
     public PlayerController player;
@@ -158,7 +159,7 @@ public class NPC_Boss : MonoBehaviour
                     attackRate = 6;
                     animator.SetTrigger("Call");
                     Invoke("CallBabyDragon", 4);
-
+                    Skill4Sound();
                 }
                 fieldOfView = 120f;
             }
@@ -361,5 +362,10 @@ public class NPC_Boss : MonoBehaviour
     {
         Instantiate(dragon1, dragon1Pos.position, Quaternion.identity);
         Instantiate(dragon2, dragon2Pos.position, Quaternion.identity);
+    }
+
+    public void Skill4Sound()
+    {
+        mySfx.PlayOneShot(skill4);
     }
 }
