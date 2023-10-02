@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class NPC_Boss : MonoBehaviour
 {
@@ -12,6 +14,10 @@ public class NPC_Boss : MonoBehaviour
         Attacking,
         Fleeing
     }
+
+    public GameObject hpBar;
+    public Slider hp;
+    public TextMeshProUGUI hpText;
 
     public AudioSource mySfx;
     public AudioClip skill4;
@@ -61,6 +67,7 @@ public class NPC_Boss : MonoBehaviour
 
     private void Awake()
     {
+        hp.maxValue = health;
         //player = GetComponent<Player>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
@@ -75,7 +82,8 @@ public class NPC_Boss : MonoBehaviour
 
     private void Update()
     {
-
+        hpText.text = health.ToString() + "/500";
+        hp.value = health;
         // 시아각 해결 문제 없음 본체랑 꼬리랑 꺼꾸로 되있었다.  Debug.Log(IsPlaterInFireldOfView());
         playerDistance = Vector3.Distance(transform.position, player.transform.position); //플레이어와 자신사이의 거리
         // 여기는 문젱없음 Debug.Log(playerDistance);
@@ -287,11 +295,15 @@ public class NPC_Boss : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            ShowHPBar();
+            Invoke("HideHPBar", 4);
             //Player.health -= 10;
             //Debug.Log("일반스킬로의 체력" + Player.health);
         }
         if (other.tag == "Melee")
         {
+            ShowHPBar();
+            Invoke("HideHPBar", 4);
             //Weapon weapon = other.GetComponent<Weapon>();
             //health -= weapon.damage;
             Debug.Log("몬스터 체력 : " + health);
@@ -367,5 +379,15 @@ public class NPC_Boss : MonoBehaviour
     public void Skill4Sound()
     {
         mySfx.PlayOneShot(skill4);
+    }
+
+    void ShowHPBar()
+    {
+        hpBar.SetActive(true);
+    }
+
+    void HideHPBar()
+    {
+        hpBar.SetActive(false);
     }
 }
