@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public enum AIState  //ai상태
 {
@@ -23,6 +24,8 @@ public class NPC : MonoBehaviour//, IDamagable
         eagle,
         dinosaur
     }
+    public Slider HPbar;
+
     public PlayerController player;
 
     public AnimalType type;
@@ -72,11 +75,14 @@ public class NPC : MonoBehaviour//, IDamagable
 
     private void Start()
     {
+        HPbar.maxValue = health;
+        HPbar.minValue = 0;
         SetState(AIState.Wandering);  //처음에 방황으로 시작
     }
 
     private void Update()
     {
+        HPbar.value = health;
         // 시아각 해결 문제 없음 본체랑 꼬리랑 꺼꾸로 되있었다.  Debug.Log(IsPlaterInFireldOfView());
         playerDistance = Vector3.Distance(transform.position, player.transform.position); //플레이어와 자신사이의 거리
         // 여기는 문젱없음 Debug.Log(playerDistance);
