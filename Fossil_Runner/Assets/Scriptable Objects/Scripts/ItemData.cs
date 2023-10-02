@@ -29,6 +29,8 @@ public class ItemData : ScriptableObject
     [Header("Info")]
     public string displayName;
     public string description;
+    public string needMatrials;
+    public int  matrialsNum;  //1, 2해서 2개가 필요할 수도
     public ItemType type;
     public Sprite icon;
     public GameObject dropPrefab;
