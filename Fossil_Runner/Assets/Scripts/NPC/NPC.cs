@@ -260,12 +260,13 @@ public class NPC : MonoBehaviour//, IDamagable
 
     public void OnTriggerEnter(Collider other)
     {
-        //if (other.tag == "Melee")
-        //{
-        //    Weapon weapon = other.GetComponent<Weapon>();
-        //    health -= weapon.damage;
-        //    Debug.Log("몬스터 체력 : " + health);
-        //}
+        if (other.tag == "Melee")
+        {
+            Weapon weapon = other.GetComponent<Weapon>();
+            health -= weapon.damage;
+            Debug.Log("몬스터 체력 : " + health);
+            StartCoroutine(DamageFlash());
+        }
 
         //if (other.tag == "Bullet")
         //{
@@ -273,11 +274,13 @@ public class NPC : MonoBehaviour//, IDamagable
         //    health -= bullet.damage;
         //    Debug.Log("몬스터 체력 : " + health);
         //}
-        //if (health <= 0)
-        DropItem();
-        Die();
+        if (health <= 0)
+        {
+            DropItem();
+            Die();
+        }
 
-        StartCoroutine(DamageFlash());
+        //StartCoroutine(DamageFlash());
     }
     //public void TakePhysicalDamage(int damageAmount)
     //{

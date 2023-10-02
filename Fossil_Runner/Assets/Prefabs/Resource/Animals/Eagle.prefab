@@ -96,7 +96,7 @@ MonoBehaviour:
   type: 2
   mySelf: {fileID: 202033569980889033}
   dropItem: []
-  health: 6
+  health: 20
   walkSpeed: 6
   runSpeed: 30
   detectDistance: 30
