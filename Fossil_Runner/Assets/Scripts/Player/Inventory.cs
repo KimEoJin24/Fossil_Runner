@@ -9,24 +9,24 @@ using static UnityEditor.Progress;
 
 public class ItemSlot
 {
-    public ItemData item;
-    public int quantity;
+    public ItemData item;  //아이템 데이더가 있는 곳
+    public int quantity;  // ?
 }
 
 public class Inventory : MonoBehaviour
 {
-    public ItemSlotUI[] uiSlots;
-    public ItemSlot[] slots;
+    public ItemSlotUI[] uiSlots;   // 아이템 정보 넣을려는 배열 인듯
+    public ItemSlot[] slots;   // 슬롯들 모아놓을려는 배열 인듯
 
 
-    public GameObject inventoryWindow;
-    public Transform dropPosition;
+    public GameObject inventoryWindow;  //인벤토리창
+    public Transform dropPosition;  //떨어트리는 위치
 
 
     [Header("Selected Item")]
-    private ItemSlot selectedItem;
-    private int selectedItemIndex;
-    public TextMeshProUGUI selectedItemName;
+    private ItemSlot selectedItem;  // 선택한아이템 담는 변수?
+    private int selectedItemIndex;  // 선택한 슬롯 인덱스
+    public TextMeshProUGUI selectedItemName; 
     public TextMeshProUGUI selectedItemDescription;
     public TextMeshProUGUI selectedItemStatNames;
     public TextMeshProUGUI selectedItemStatValues;
@@ -41,10 +41,10 @@ public class Inventory : MonoBehaviour
     private PlayerConditions condition;
 
     [Header("Events")]
-    public UnityEvent onOpenInventory;
-    public UnityEvent onCloseInventory;
+    public UnityEvent onOpenInventory;  //열때 발생하는 이벤트
+    public UnityEvent onCloseInventory; // 닫을 때 발생하는 이벤트
 
-    public static Inventory instance;
+    public static Inventory instance;  //싱글톤?
     void Awake()
     {
         instance = this;
@@ -56,9 +56,9 @@ public class Inventory : MonoBehaviour
         inventoryWindow.SetActive(false);
         slots = new ItemSlot[uiSlots.Length];
 
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)  //각각의 인벤토리에 슬롯 번호와 초기화를 시켜줌
         {
-            slots[i] = new ItemSlot();
+            slots[i] = new ItemSlot(); 
             uiSlots[i].index = i;
             uiSlots[i].Clear();
         }
@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
         ClearSeletecItemWindow();
     }
 
-    public void OnInventoryButton(InputAction.CallbackContext callbackContext)
+    public void OnInventoryButton(InputAction.CallbackContext callbackContext) //인벤토리를 켜면?
     {
         if (callbackContext.phase == InputActionPhase.Started)
         {
@@ -75,7 +75,7 @@ public class Inventory : MonoBehaviour
     }
 
 
-    public void Toggle()
+    public void Toggle() // 켯다 껏다하는 메서드
     {
         if (inventoryWindow.activeInHierarchy)
         {
@@ -93,36 +93,36 @@ public class Inventory : MonoBehaviour
 
     public bool IsOpen()
     {
-        return inventoryWindow.activeInHierarchy;
+        return inventoryWindow.activeInHierarchy; //부모오브젝트의 경우를 대비하여 오브젝트의 상태를 확인할 경우
     }
 
     public void AddItem(ItemData item)
     {
-        if (item.canStack)
+        if (item.canStack) //아이템을 쌓을 수 있다면
         {
-            ItemSlot slotToStackTo = GetItemStack(item);
+            ItemSlot slotToStackTo = GetItemStack(item); //아이템 쌓기
             if (slotToStackTo != null)
             {
-                slotToStackTo.quantity++;
-                UpdateUI();
+                slotToStackTo.quantity++; //아이템 쌓기
+                UpdateUI(); //업로드하기
                 return;
             }
         }
 
-        ItemSlot emptySlot = GetEmptySlot();
+        ItemSlot emptySlot = GetEmptySlot();  //빈슬롯을 찾는 메서드
 
-        if (emptySlot != null)
+        if (emptySlot != null) //슬롯이 있다면 -> 이건 스택이 불가한경우
         {
-            emptySlot.item = item;
-            emptySlot.quantity = 1;
-            UpdateUI();
+            emptySlot.item = item; //아이템 추가
+            emptySlot.quantity = 1; // 1
+            UpdateUI();//업로드
             return;
         }
 
-        ThrowItem(item);
+        ThrowItem(item); //둘다아니면 못먹어요
     }
 
-    void ThrowItem(ItemData item)
+    void ThrowItem(ItemData item)  //아이템 버리는 메서드
     {
         Instantiate(item.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360f));
     }
@@ -131,25 +131,25 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (slots[i].item != null)
+            if (slots[i].item != null) //아이템이 있으면 설정
                 uiSlots[i].Set(slots[i]);
             else
-                uiSlots[i].Clear();
+                uiSlots[i].Clear();  //아이템이 없으면 클리어
         }
     }
 
-    ItemSlot GetItemStack(ItemData item)
+    ItemSlot GetItemStack(ItemData item)  //스택쌓기
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (slots[i].item == item && slots[i].quantity < item.maxStackAmount)
+            if (slots[i].item == item && slots[i].quantity < item.maxStackAmount) //아이템의 종류거 같으면서 최대치를 넘지 않는다면
                 return slots[i];
         }
 
         return null;
     }
 
-    ItemSlot GetEmptySlot()
+    ItemSlot GetEmptySlot() //빈슬룻 찾아서 넣기
     {
         for (int i = 0; i < slots.Length; i++)
         {
@@ -160,13 +160,13 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
-    public void SelectItem(int index)
+    public void SelectItem(int index)  //
     {
         if (slots[index].item == null)
             return;
 
-        selectedItem = slots[index];
-        selectedItemIndex = index;
+        selectedItem = slots[index]; //슬롯을 찾음
+        selectedItemIndex = index;  // 슬롯번호
 
         selectedItemName.text = selectedItem.item.displayName;
         selectedItemDescription.text = selectedItem.item.description;
@@ -174,7 +174,7 @@ public class Inventory : MonoBehaviour
         selectedItemStatNames.text = string.Empty;
         selectedItemStatValues.text = string.Empty;
 
-        for (int i = 0; i < selectedItem.item.consumables.Length; i++)
+        for (int i = 0; i < selectedItem.item.consumables.Length; i++) //길면뛰는 메서드인듯
         {
             selectedItemStatNames.text += selectedItem.item.consumables[i].type.ToString() + "\n";
             selectedItemStatValues.text += selectedItem.item.consumables[i].value.ToString() + "\n";
@@ -186,7 +186,7 @@ public class Inventory : MonoBehaviour
         dropButton.SetActive(true);
     }
 
-    private void ClearSeletecItemWindow()
+    private void ClearSeletecItemWindow()  //선택한아이템 지우기
     {
         selectedItem = null;
         selectedItemName.text = string.Empty;
@@ -241,7 +241,7 @@ public class Inventory : MonoBehaviour
             RemoveSelectedItem();
         }
 
-        void RemoveSelectedItem()
+        void RemoveSelectedItem() //아이템 제거하기
         {
             selectedItem.quantity--;
 
