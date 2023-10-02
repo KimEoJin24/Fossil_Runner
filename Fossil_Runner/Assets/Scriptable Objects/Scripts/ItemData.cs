@@ -9,7 +9,7 @@ public enum ItemType
     Consumable
 }
 
-public enum ConsumbleType
+public enum ConsumableType
 {
     Health,
     Hunger,
@@ -19,7 +19,7 @@ public enum ConsumbleType
 [System.Serializable]
 public class ItemDataConsumable
 {
-    public ConsumbleType Type;
+    public ConsumableType type;
     public float value;
 }
 
