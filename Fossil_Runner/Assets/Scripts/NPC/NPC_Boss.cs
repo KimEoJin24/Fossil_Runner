@@ -23,6 +23,7 @@ public class NPC_Boss : MonoBehaviour
     public AudioClip skill4;
 
     // public Player player;
+    public PlayerConditions playerConditions;
     public PlayerController player;
     public GameObject dragon1;
     public GameObject dragon2;
@@ -297,15 +298,16 @@ public class NPC_Boss : MonoBehaviour
         {
             ShowHPBar();
             Invoke("HideHPBar", 4);
+            playerConditions.health.curValue -= 10f;
             //Player.health -= 10;
-            //Debug.Log("일반스킬로의 체력" + Player.health);
+            Debug.Log("일반스킬로의 체력" + playerConditions.health.curValue);
         }
         if (other.tag == "Melee")
         {
             ShowHPBar();
             Invoke("HideHPBar", 4);
-            //Weapon weapon = other.GetComponent<Weapon>();
-            //health -= weapon.damage;
+            Weapon weapon = other.GetComponent<Weapon>();
+            health -= weapon.damage;
             Debug.Log("몬스터 체력 : " + health);
         }
 

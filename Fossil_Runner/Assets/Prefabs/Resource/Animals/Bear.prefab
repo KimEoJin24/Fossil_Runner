@@ -289,7 +289,7 @@ MonoBehaviour:
   mySelf: {fileID: 1634812848518376115}
   dropItem:
   - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
-  health: 30
+  health: 70
   walkSpeed: 8
   runSpeed: 30
   detectDistance: 30
