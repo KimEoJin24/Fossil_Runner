@@ -3,6 +3,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class PlayerController : MonoBehaviour
     private float _camCurXRot;
     public float lookSensitivity;
 
+    [Header("Attack")]
+    [SerializeField] private float AttackDelay;
+    [SerializeField] private bool isAttackReady;
+    [SerializeField] private Weapon _equipWeapon;
+    
     private Vector2 _mouseDelta;
 
     [HideInInspector]
@@ -52,6 +58,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        Attack();
     }
 
 
@@ -157,6 +164,27 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
     }
-    
+
+    public void Attack()
+    {
+        if (_equipWeapon == null)
+        {
+            return;
+        }
+
+        AttackDelay += Time.deltaTime;
+        isAttackReady = _equipWeapon.rate < AttackDelay;
+    }
+
+    public void OnAttackInput(InputAction.CallbackContext context)
+    {
+        Debug.Log("공격누름");
+        if (isAttackReady && context.phase == InputActionPhase.Started)
+        {
+            _equipWeapon.Use();
+            animator.SetTrigger("Attack");
+            AttackDelay = 0;
+        }
+    }
     
 }
