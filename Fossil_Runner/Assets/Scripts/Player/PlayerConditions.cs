@@ -1,48 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 
 public interface IDamagable
 {
-    void TakePhysicalDamage(int damageAmount);
+    void TakePhysicalDamage(float amount);
 }
 
 [System.Serializable]
 public class Condition
 {
-    [HideInInspector]
+    // [HideInInspector]
     public float curValue;
     public float maxValue;
     public float startValue;
     public float regenRate;
     public float decayRage;
-    public Image uiBar;
 
     public void Add(float amount)
     {
-        curValue = Mathf.Min(curValue + amount, maxValue); // 최대 체력 안 넘게
+        curValue = Mathf.Min(curValue + amount, maxValue);
     }
 
     public void Subtract(float amount)
     {
-        curValue = Mathf.Max(curValue - amount, 0.0f); // 0보다는 크게
-    }
-
-    public float GetPercentage()
-    {
-        return curValue / maxValue;
+        curValue = Mathf.Max(curValue - amount, 0.0f);
     }
 }
 
 public class PlayerConditions : MonoBehaviour, IDamagable
 {
+    public MeterController meter;
     public Condition health;
     public Condition thirsty;
     public Condition stamina;
 
-    public float noHungerHealthDecay; // 배고픔이 다 닳았을 때는 피가 달게.
+    public float noThirstyHealthDecay;
 
     public UnityEvent onTakeDamage;
 
@@ -51,6 +43,9 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         health.curValue = health.startValue;
         thirsty.curValue = thirsty.startValue;
         stamina.curValue = stamina.startValue;
+        meter.SetMaxHealth(health.maxValue);
+        meter.SetMaxStamina(stamina.maxValue);
+        meter.SetMaxThirsty(thirsty.maxValue);
     }
 
     void Update()
@@ -60,17 +55,20 @@ public class PlayerConditions : MonoBehaviour, IDamagable
 
         if (thirsty.curValue == 0.0f)
         {
-            health.Subtract(noHungerHealthDecay * Time.deltaTime);
+            health.Subtract(noThirstyHealthDecay * Time.deltaTime);
         }
 
         if (health.curValue == 0.0f)
         {
             Die();
         }
+    }
 
-      //  health.uiBar.fillAmount = health.GetPercentage();
-      //  thirsty.uiBar.fillAmount = thirsty.GetPercentage();
-      //  stamina.uiBar.fillAmount = stamina.GetPercentage();
+    private void FixedUpdate()
+    {
+        meter.SetHealth(health.curValue);
+        meter.SetStamina(stamina.curValue);
+        meter.SetThirsty(thirsty.curValue);
     }
 
     public void Heal(float amount)
@@ -99,9 +97,9 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         Debug.Log("플레이어가 죽었다.");
     }
 
-    public void TakePhysicalDamage(int damageAmount)
+    public void TakePhysicalDamage(float amount)
     {
-        health.Subtract(damageAmount);
+        health.Subtract(amount);
         onTakeDamage?.Invoke();
     }
 }

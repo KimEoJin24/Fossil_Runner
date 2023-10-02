@@ -1,18 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     Animator animator;
-    bool rDown;
-
+    
     [Header("Movement")]
     public float moveSpeed;
-    private Vector2 curMovementInput;
+    [SerializeField] private float runSpeedRate;
+    private Vector2 _curMovementInput;
     public float jumpForce;
     public LayerMask groundLayerMask;
 
@@ -21,33 +17,33 @@ public class PlayerController : MonoBehaviour
 
     public float minXLook;
     public float maxXLook;
-    private float camCurXRot;
+    private float _camCurXRot;
     public float lookSensitivity;
 
-    private Vector2 mouseDelta;
+    private Vector2 _mouseDelta;
 
     [HideInInspector]
     public bool canLook = true;
 
     private Rigidbody _rigidbody;
 
-    public static PlayerController instance;
+    public static PlayerController Instance;
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        instance = this;
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
         _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    private void Update()
-    {
-        rDown = Input.GetButton("Run");
+        // Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void FixedUpdate()
@@ -66,47 +62,36 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
-        if (rDown)
-        {
-            animator.SetBool("Run", true);  //캐릭터 사용할려면 지워주세요
-            dir *=2 * moveSpeed;
-        }
-        else
-        {
-            animator.SetBool("Run", false); //캐릭터 사용할려면 지워주세요
-            dir *=  moveSpeed;
-
-        }      
+        Vector3 dir = transform.forward * _curMovementInput.y + transform.right * _curMovementInput.x;
+        dir *= moveSpeed;
         dir.y = _rigidbody.velocity.y;
-
         _rigidbody.velocity = dir;
     }
     private void CameraLook()
     {
-        camCurXRot += mouseDelta.y * lookSensitivity;
-        camCurXRot = Mathf.Clamp(camCurXRot, minXLook, maxXLook);
-        cameraContainer.localEulerAngles = new Vector3(-camCurXRot, 0, 0);
+        _camCurXRot += _mouseDelta.y * lookSensitivity;
+        _camCurXRot = Mathf.Clamp(_camCurXRot, minXLook, maxXLook);
+        cameraContainer.localEulerAngles = new Vector3(-_camCurXRot, 0, 0);
 
-        transform.eulerAngles += new Vector3(0, mouseDelta.x * lookSensitivity, 0);
+        transform.eulerAngles += new Vector3(0, _mouseDelta.x * lookSensitivity, 0);
     }
 
     public void OnLookInput(InputAction.CallbackContext context)
     {
-        mouseDelta = context.ReadValue<Vector2>();
+        _mouseDelta = context.ReadValue<Vector2>();
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            curMovementInput = context.ReadValue<Vector2>();
-              animator.SetBool("Move", true);//캐릭터 사용할려면 지워주세요
+            _curMovementInput = context.ReadValue<Vector2>();
+            animator.SetBool("Move", true);
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
-            curMovementInput = Vector2.zero;
-               animator.SetBool("Move", false);//캐릭터 사용할려면 지워주세요
+            _curMovementInput = Vector2.zero;
+            animator.SetBool("Move", false);
         }
     }
 
@@ -116,10 +101,24 @@ public class PlayerController : MonoBehaviour
         {
             if (IsGrounded())
             {
-                   animator.SetBool("Run", false);//캐릭터 사용할려면 지워주세요
-                   animator.SetBool("Move", false);//캐릭터 사용할려면 지워주세요
-                _rigidbody.AddForce(Vector2.up*jumpForce, ForceMode.Impulse);
+                animator.SetBool("Run", false);
+                animator.SetBool("Move", false);
+                _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
             }
+        }
+    }
+
+    public void OnRunInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            animator.SetBool("Run", true);
+            moveSpeed *= runSpeedRate;
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            animator.SetBool("Run", false);
+            moveSpeed /= runSpeedRate;
         }
     }
 
