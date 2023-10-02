@@ -73,10 +73,10 @@ AnimatorStateMachine:
     m_Position: {x: 100, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4963760537641442217}
-    m_Position: {x: 650, y: 60, z: 0}
+    m_Position: {x: 650, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3568859419161179224}
-    m_Position: {x: 640, y: 10, z: 0}
+    m_Position: {x: 650, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3426881066900810842}
     m_Position: {x: 300, y: 250, z: 0}
@@ -287,19 +287,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Run
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

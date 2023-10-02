@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     Animator animator;
     bool rDown;
-
+    
+    
     [Header("Movement")]
     public float moveSpeed;
     private Vector2 curMovementInput;
@@ -31,12 +28,17 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody _rigidbody;
 
-    public static PlayerController instance;
+    public static PlayerController Instance;
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        instance = this;
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
         _rigidbody = GetComponent<Rigidbody>();
     }
 
