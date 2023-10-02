@@ -1,3 +1,6 @@
+using System;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -121,7 +124,7 @@ public class PlayerController : MonoBehaviour
             moveSpeed /= runSpeedRate;
         }
     }
-
+    
     private bool IsGrounded()
     {
         Ray[] rays = new Ray[4]
@@ -133,7 +136,7 @@ public class PlayerController : MonoBehaviour
         };
         for (int i = 0; i < rays.Length; i++)
         {
-            if (Physics.Raycast(rays[i], 0.3f, groundLayerMask))
+            if (Physics.Raycast(rays[i], 0.3f,groundLayerMask))
             {
                 return true;
             }
@@ -154,4 +157,6 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         canLook = !toggle;
     }
+    
+    
 }
