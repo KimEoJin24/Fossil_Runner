@@ -6,9 +6,6 @@ public class NPC_Tree : MonoBehaviour
 {
     public int health;
     private MeshRenderer[] meshRenderers;
-    public GameObject mySelf;
-    Vector3 itemPosition;
-    public List<GameObject> dropItem = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +39,7 @@ public class NPC_Tree : MonoBehaviour
 
             //Invoke("Respwan",4);
             // Die();
-            DropItem();
+            //  DropItem();
             Destroy(gameObject);
 
         }
@@ -57,21 +54,5 @@ public class NPC_Tree : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         for (int x = 0; x < meshRenderers.Length; x++)
             meshRenderers[x].material.color = Color.white;
-    }
-
-    public void DropItem()
-    {
-        for (int i = 0; i < dropItem.Count; i++)
-        {
-            itemPosition = mySelf.transform.position + new Vector3(0, 5, 0);
-            //dropItem.Count;
-            int num = Random.Range(0, dropItem.Count);
-            GameObject go = Instantiate(dropItem[num], itemPosition, Quaternion.identity);
-            go.transform.localScale = new Vector3(7, 7, 7);
-            //Debug.Log(go.transform.localScale);
-            go.GetComponent<Rigidbody>().AddForce(transform.up * 5, ForceMode.Impulse); 
-
-            
-        }
     }
 }

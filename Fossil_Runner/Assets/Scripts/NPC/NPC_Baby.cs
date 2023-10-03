@@ -238,8 +238,8 @@ public class NPC_Baby : MonoBehaviour
     {
         if (other.tag == "Melee")
         {
-            Weapon weapon = other.GetComponent<Weapon>();
-            health -= weapon.damage;
+           // Weapon weapon = other.GetComponent<Weapon>();
+           // health -= weapon.damage;
             Debug.Log("몬스터 체력 : " + health);
         }
 

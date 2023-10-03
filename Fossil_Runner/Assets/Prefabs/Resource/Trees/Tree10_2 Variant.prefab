@@ -130,9 +130,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 70
-  mySelf: {fileID: 6312430823205606274}
-  dropItem:
-  - {fileID: 4856306437467914173, guid: 8b1593f8ebcbd68448965f6441fea1b7, type: 3}
-  - {fileID: 4856306437467914173, guid: 8b1593f8ebcbd68448965f6441fea1b7, type: 3}
-  - {fileID: 4856306437467914173, guid: 8b1593f8ebcbd68448965f6441fea1b7, type: 3}
-  - {fileID: 4856306437467914173, guid: 8b1593f8ebcbd68448965f6441fea1b7, type: 3}

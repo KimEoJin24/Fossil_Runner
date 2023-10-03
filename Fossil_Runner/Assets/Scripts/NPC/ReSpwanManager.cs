@@ -21,14 +21,9 @@ public class ReSpwanManager : MonoBehaviour
     public int dinoNum;  //°ø·æ ¼ö
     public Transform dinoRespwanPos;
 
-    public GameObject BossDino;
-    public int BossDinoNum;  //°ø·æ ¼ö
-    public Transform BossDinoRespwanPos;
-
 
 
     public PlayerController player;
-    public PlayerConditions playerConditions;
     float scale;
 
     public static ReSpwanManager Instance;  //½Ì±ÛÅæ ÁøÇà
@@ -53,7 +48,7 @@ public class ReSpwanManager : MonoBehaviour
         StartSetFoxNum();
         StartSetEagleNum();
         StartSetDinoNum();
-        StartSetBossDinoNum();
+
     }
 
     // Update is called once per frame
@@ -71,7 +66,6 @@ public class ReSpwanManager : MonoBehaviour
         scale = Random.Range(0.2f,1F);
         GameObject bears = Instantiate(bear, bearRespwanPos.position, Quaternion.identity);
         bears.GetComponent<NPC>().player = player;
-        bears.GetComponent<NPC>().playerConditions = playerConditions;
         bears.transform.localScale = new Vector3(scale, scale, scale);
         // bearNum++;
 
@@ -104,7 +98,6 @@ public class ReSpwanManager : MonoBehaviour
         scale = Random.Range(0.2f, 1F);
         GameObject foxs = Instantiate(fox, foxRespwanPos.position, Quaternion.identity);
         foxs.GetComponent<NPC>().player = player;
-        foxs.GetComponent<NPC>().playerConditions = playerConditions;
         foxs.transform.localScale = new Vector3(scale, scale, scale);
     }
     public void FoxDie()
@@ -132,7 +125,6 @@ public class ReSpwanManager : MonoBehaviour
         scale = Random.Range(0.2f, 1F);
         GameObject eagles = Instantiate(eagle, eagleRespwanPos.position, Quaternion.identity);
         eagles.GetComponent<NPC>().player = player;
-        eagles.GetComponent<NPC>().playerConditions = playerConditions;
         eagles.transform.localScale = new Vector3(scale, scale, scale);
     }
     public void EagleDie()
@@ -160,7 +152,6 @@ public class ReSpwanManager : MonoBehaviour
         scale = Random.Range(0.2f, 1F);
         GameObject dinos = Instantiate(dino, dinoRespwanPos.position, Quaternion.identity);
         dinos.GetComponent<NPC>().player = player;
-        dinos.GetComponent<NPC>().playerConditions = playerConditions;
         dinos.transform.localScale = new Vector3(scale, scale, scale);
     }
     public void DinoDie()
@@ -180,23 +171,6 @@ public class ReSpwanManager : MonoBehaviour
         {
             dinoNum++;
             Invoke("DinoRespwan", 4);
-        }
-    }
-
-    void BossDinoRespwan()
-    {
-        scale = Random.Range(0.1f, 0.3F);
-        GameObject dinos = Instantiate(BossDino, BossDinoRespwanPos.position, Quaternion.identity);
-        dinos.GetComponent<NPC>().player = player;
-        dinos.GetComponent<NPC>().playerConditions = playerConditions;
-        dinos.transform.localScale = new Vector3(scale, scale, scale);
-    }
-
-    public void StartSetBossDinoNum()
-    {
-        for (int i = 0; i < BossDinoNum; i++)
-        {
-            BossDinoRespwan();
         }
     }
 }
