@@ -21,6 +21,10 @@ public class ReSpwanManager : MonoBehaviour
     public int dinoNum;  //°ø·æ ¼ö
     public Transform dinoRespwanPos;
 
+    public GameObject BossDino;
+    public int BossDinoNum;  //°ø·æ ¼ö
+    public Transform BossDinoRespwanPos;
+
 
 
     public PlayerController player;
@@ -48,7 +52,7 @@ public class ReSpwanManager : MonoBehaviour
         StartSetFoxNum();
         StartSetEagleNum();
         StartSetDinoNum();
-
+        StartSetBossDinoNum();
     }
 
     // Update is called once per frame
@@ -171,6 +175,22 @@ public class ReSpwanManager : MonoBehaviour
         {
             dinoNum++;
             Invoke("DinoRespwan", 4);
+        }
+    }
+
+    void BossDinoRespwan()
+    {
+        scale = Random.Range(0.1f, 0.3F);
+        GameObject dinos = Instantiate(BossDino, BossDinoRespwanPos.position, Quaternion.identity);
+        dinos.GetComponent<NPC>().player = player;
+        dinos.transform.localScale = new Vector3(scale, scale, scale);
+    }
+
+    public void StartSetBossDinoNum()
+    {
+        for (int i = 0; i < BossDinoNum; i++)
+        {
+            BossDinoRespwan();
         }
     }
 }
