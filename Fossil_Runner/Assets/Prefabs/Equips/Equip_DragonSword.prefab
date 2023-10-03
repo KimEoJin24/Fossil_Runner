@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3738170762527037627}
   m_Layer: 9
   m_Name: Equip_DragonSword
-  m_TagString: Untagged
+  m_TagString: Melee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,16 +25,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4147716513744851619}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalRotation: {x: -0.063966386, y: 0.53180546, z: 0.32820556, w: -0.77805686}
+  m_LocalPosition: {x: 1577.2955, y: 72.9161, z: 1749.8005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1790947104343038674}
   - {fileID: 4003825397529809669}
   - {fileID: 5629249694496223525}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &124096476798997224
 MonoBehaviour:

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7231479525720606438}
   - component: {fileID: 3334437448957339571}
   - component: {fileID: 4159322106293821228}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_RedFlower
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -151,6 +151,10 @@ PrefabInstance:
     - target: {fileID: 2594766243793620232, guid: 4d1f930728eb81f499eefd1f6d4db221, type: 3}
       propertyPath: m_Name
       value: Flower1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594766243793620232, guid: 4d1f930728eb81f499eefd1f6d4db221, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2594766243793620232, guid: 4d1f930728eb81f499eefd1f6d4db221, type: 3}
       propertyPath: m_StaticEditorFlags

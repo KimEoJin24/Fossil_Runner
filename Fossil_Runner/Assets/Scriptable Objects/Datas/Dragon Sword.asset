@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dragon Sword
   m_EditorClassIdentifier: 
   displayName: "\uBD89\uC740 \uC6A9\uC758 \uB300\uAC80"
-  description: "\uBD88\uC774 \uAE43\uB4E0 \uAC80"
+  description: "\uBD88\uC758 \uD798\uC774 \uAE43\uB4E0 \uB300\uAC80"
   type: 1
   icon: {fileID: 21300000, guid: 21810136919c16040991088e9d71fb85, type: 3}
   dropPrefab: {fileID: 958357033395984650, guid: d68046c2297827c48acf8db03c9f96c6, type: 3}
