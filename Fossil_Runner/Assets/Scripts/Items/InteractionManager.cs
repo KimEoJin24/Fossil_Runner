@@ -49,7 +49,7 @@ public class InteractionManager : MonoBehaviour // Player에 넣어주기
         {
             curInteractGameObject = null;
             curInteractable = null;
-            promptText.gameObject.SetActive(false);
+            //promptText.gameObject.SetActive(false);
         }
         
     }

@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
@@ -69,12 +69,12 @@ public class PlayerController : MonoBehaviour
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
         if (rDown)
         {
-            animator.SetBool("Run", true);  //Ä³¸¯ÅÍ »ó¿äÇÒ·Á¸é Áö¿öÁÖ¼¼¿ä
+            animator.SetBool("Run", true);  //Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½
             dir *=2 * moveSpeed;
         }
         else
         {
-            animator.SetBool("Run", false); //Ä³¸¯ÅÍ »ç¿ëÇÒ·Á¸é Áö¿öÁÖ¼¼¿ä
+            animator.SetBool("Run", false); //Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½
             dir *=  moveSpeed;
 
         }      
@@ -101,12 +101,12 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Performed)
         {
             curMovementInput = context.ReadValue<Vector2>();
-              animator.SetBool("Move", true);//Ä³¸¯ÅÍ »ç¿ëÇÒ·Á¸é Áö¿öÁÖ¼¼¿ä
+              animator.SetBool("Move", true);//Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
             curMovementInput = Vector2.zero;
-               animator.SetBool("Move", false);//Ä³¸¯ÅÍ »ç¿ëÇÒ·Á¸é Áö¿öÁÖ¼¼¿ä
+               animator.SetBool("Move", false);//Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½
         }
     }
 
@@ -116,8 +116,8 @@ public class PlayerController : MonoBehaviour
         {
             if (IsGrounded())
             {
-                   animator.SetBool("Run", false);//Ä³¸¯ÅÍ »ç¿ëÇÒ·Á¸é Áö¿öÁÖ¼¼¿ä
-                   animator.SetBool("Move", false);//Ä³¸¯ÅÍ »ç¿ëÇÒ·Á¸é Áö¿öÁÖ¼¼¿ä
+                   animator.SetBool("Run", false);//Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½
+                   animator.SetBool("Move", false);//Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½
                 _rigidbody.AddForce(Vector2.up*jumpForce, ForceMode.Impulse);
             }
         }
