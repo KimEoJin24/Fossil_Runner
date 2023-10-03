@@ -314,8 +314,9 @@ public class NPC : MonoBehaviour//, IDamagable
             //dropItem.Count;
             int num = Random.Range(0, dropItem.Count);
             GameObject go = Instantiate(dropItem[num], itemPosition, Quaternion.identity);
-            //Debug.Log(itemPosition);
-            go.GetComponent<Rigidbody>().AddForce(transform.up * 20, ForceMode.Impulse); //�߷��� ���ٰ� Ű�� ������ ����?
+            go.transform.localScale = new Vector3(7, 7, 7);
+            //Debug.Log(go.transform.localScale);
+            go.GetComponent<Rigidbody>().AddForce(transform.up * 5, ForceMode.Impulse); //�߷��� ���ٰ� Ű�� ������ ����?
 
             //�������� �ҷ��� for�� �������ϰų� ȿ���� �ָ� �ɵ�
         }
