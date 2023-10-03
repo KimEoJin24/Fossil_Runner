@@ -110,8 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  mySelf: {fileID: 0}
-  dropItem: []
 --- !u!65 &9067267408892325746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -146,6 +144,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  mySelf: {fileID: 61735898342754304}
-  dropItem:
-  - {fileID: 4856306437467914173, guid: 8b1593f8ebcbd68448965f6441fea1b7, type: 3}

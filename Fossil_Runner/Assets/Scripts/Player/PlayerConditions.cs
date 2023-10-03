@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -34,20 +33,10 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public Condition health;
     public Condition thirsty;
     public Condition stamina;
+
     public float noThirstyHealthDecay;
-    public bool useRunStamina;
-    public float attackStamina;
-    
-    private Animator _animator;
-    private PlayerController _controller;
 
     public UnityEvent onTakeDamage;
-
-    private void Awake()
-    {
-        _animator = GetComponentInChildren<Animator>();
-        _controller = GetComponent<PlayerController>();
-    }
 
     void Start()
     {
@@ -68,13 +57,10 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         {
             health.Subtract(noThirstyHealthDecay * Time.deltaTime);
         }
-        if (health.curValue <= 0.0f)
+
+        if (health.curValue == 0.0f)
         {
             Die();
-        }
-        if (useRunStamina)
-        {
-            UseStamina(stamina.decayRage * Time.deltaTime);
         }
     }
 
@@ -99,11 +85,9 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     {
         if (stamina.curValue - amount < 0)
         {
-            _animator.SetBool("Run", false);
-            _controller.moveSpeed /= _controller.runSpeedRate;
-            useRunStamina = false;
             return false;
         }
+
         stamina.Subtract(amount);
         return true;
     }
@@ -111,13 +95,11 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public void Die()
     {
         Debug.Log("플레이어가 죽었다.");
-        _animator.SetBool("Dead", true);
     }
 
     public void TakePhysicalDamage(float amount)
     {
         health.Subtract(amount);
         onTakeDamage?.Invoke();
-        _animator.SetTrigger("Pain");
     }
 }

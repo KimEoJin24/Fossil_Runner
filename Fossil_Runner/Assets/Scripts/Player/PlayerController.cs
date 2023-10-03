@@ -1,6 +1,5 @@
 using System;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,9 +7,11 @@ using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
+    Animator animator;
+    
     [Header("Movement")]
     public float moveSpeed;
-    [SerializeField] public float runSpeedRate;
+    [SerializeField] private float runSpeedRate;
     private Vector2 _curMovementInput;
     public float jumpForce;
     public LayerMask groundLayerMask;
@@ -34,14 +35,12 @@ public class PlayerController : MonoBehaviour
     public bool canLook = true;
 
     private Rigidbody _rigidbody;
-    private PlayerConditions _conditions;
-    private Animator _animator;
-    
-    private static PlayerController Instance;
+
+    public static PlayerController Instance;
 
     private void Awake()
     {
-        _animator = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -49,7 +48,6 @@ public class PlayerController : MonoBehaviour
         }
         Instance = this;
         _rigidbody = GetComponent<Rigidbody>();
-        _conditions = GetComponent<PlayerConditions>();
     }
 
     private void Start()
@@ -98,12 +96,12 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Performed)
         {
             _curMovementInput = context.ReadValue<Vector2>();
-            _animator.SetBool("Move", true);
+            animator.SetBool("Move", true);
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
             _curMovementInput = Vector2.zero;
-            _animator.SetBool("Move", false);
+            animator.SetBool("Move", false);
         }
     }
 
@@ -113,8 +111,8 @@ public class PlayerController : MonoBehaviour
         {
             if (IsGrounded())
             {
-                _animator.SetBool("Run", false);
-                _animator.SetBool("Move", false);
+                animator.SetBool("Run", false);
+                animator.SetBool("Move", false);
                 _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
             }
         }
@@ -122,19 +120,15 @@ public class PlayerController : MonoBehaviour
 
     public void OnRunInput(InputAction.CallbackContext context)
     {
-        if (_conditions.stamina.curValue > _conditions.stamina.decayRage
-            && context.phase == InputActionPhase.Started)
+        if (context.phase == InputActionPhase.Started)
         {
-            _animator.SetBool("Run", true);
+            animator.SetBool("Run", true);
             moveSpeed *= runSpeedRate;
-            _conditions.useRunStamina = true;
         }
-        else if (_conditions.useRunStamina
-                 && context.phase == InputActionPhase.Canceled)
+        else if (context.phase == InputActionPhase.Canceled)
         {
-            _animator.SetBool("Run", false);
+            animator.SetBool("Run", false);
             moveSpeed /= runSpeedRate;
-            _conditions.useRunStamina = false;
         }
     }
     
@@ -184,12 +178,12 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttackInput(InputAction.CallbackContext context)
     {
-        if (_conditions.stamina.curValue >= _conditions.attackStamina && context.phase == InputActionPhase.Started)
+        Debug.Log("공격누름");
+        if (isAttackReady && context.phase == InputActionPhase.Started)
         {
             _equipWeapon.Use();
-            _animator.SetTrigger("Attack");
+            animator.SetTrigger("Attack");
             AttackDelay = 0;
-            _conditions.UseStamina(_conditions.attackStamina);
         }
     }
     
