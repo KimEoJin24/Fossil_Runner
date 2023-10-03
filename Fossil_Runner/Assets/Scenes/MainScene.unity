@@ -5833,11 +5833,11 @@ MonoBehaviour:
   dino: {fileID: 893411686591906312, guid: c66be8d6ca4c82946a7028eee483f317, type: 3}
   dinoNum: 8
   dinoRespwanPos: {fileID: 1528930029}
-  BossDino: {fileID: 0}
-  BossDinoNum: 0
-  BossDinoRespwanPos: {fileID: 0}
+  BossDino: {fileID: 893411686591906312, guid: c66be8d6ca4c82946a7028eee483f317, type: 3}
+  BossDinoNum: 8
+  BossDinoRespwanPos: {fileID: 588076515}
   player: {fileID: 5521888832759806792}
-  playerConditions: {fileID: 0}
+  playerConditions: {fileID: 8449220944950173193}
 --- !u!4 &748956566
 Transform:
   m_ObjectHideFlags: 0

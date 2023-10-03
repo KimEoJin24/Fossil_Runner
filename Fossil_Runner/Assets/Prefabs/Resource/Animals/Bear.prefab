@@ -285,9 +285,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HPbar: {fileID: 8456624696703261380}
   player: {fileID: 0}
+  playerConditions: {fileID: 0}
   type: 0
   mySelf: {fileID: 1634812848518376115}
   dropItem:
+  - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
+  - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
+  - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
   - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
   health: 70
   walkSpeed: 8
