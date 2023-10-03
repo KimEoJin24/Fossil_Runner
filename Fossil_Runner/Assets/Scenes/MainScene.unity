@@ -1358,6 +1358,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2818445835192848373, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
   m_PrefabInstance: {fileID: 1449117015}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &205669212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205669207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac384f70236e1a4290b08ca0b95aac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &207977926 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9071426532926360701, guid: 6c95ce92f8df18e4581cc0c4db2058be, type: 3}
@@ -11708,6 +11720,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2728727858133358025, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2818445835192848373, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -12270,6 +12286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6542879365146894867, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
+    - {fileID: 7109105078810112309, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -12282,6 +12299,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1707739528562831935, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1405186789}
+    - targetCorrespondingSourceObject: {fileID: 2818445835192848373, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 205669212}
   m_SourcePrefab: {fileID: 100100000, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
 --- !u!1 &1457956759 stripped
 GameObject:
