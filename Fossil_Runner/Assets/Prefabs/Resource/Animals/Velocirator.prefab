@@ -355,7 +355,7 @@ Transform:
   - {fileID: 4704450826280321532}
   - {fileID: 3895596170686639307}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &4476568058479827828
 BoxCollider:
@@ -376,7 +376,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.7, y: 15.2, z: 22.2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 5, z: 0}
 --- !u!195 &3311437762586362061
 NavMeshAgent:
@@ -416,11 +416,7 @@ MonoBehaviour:
   player: {fileID: 0}
   type: 3
   mySelf: {fileID: 893411686591906312}
-  dropItem:
-  - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
-  - {fileID: 6080960948927018683, guid: 2abfb8b174696894da74170cc89c6c74, type: 3}
-  - {fileID: 322228960878561350, guid: 1e853a98a1cc0484fbfc0b0d0ff43a82, type: 3}
-  - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
+  dropItem: []
   health: 100
   walkSpeed: 25
   runSpeed: 50
@@ -432,7 +428,7 @@ MonoBehaviour:
   maxWanderWaitTime: 2
   damage: 5
   attackRate: 1.5
-  attackDistance: 20
+  attackDistance: 10
   fieldOfView: 120
 --- !u!1 &959427928989033506
 GameObject:
