@@ -36,6 +36,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Pain
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Dead
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -872514728659343230}
   m_Solo: 0
@@ -98,7 +101,7 @@ AnimatorStateMachine:
     m_Position: {x: 100, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4963760537641442217}
-    m_Position: {x: 40, y: 270, z: 0}
+    m_Position: {x: 100, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3568859419161179224}
     m_Position: {x: 570, y: 100, z: 0}
@@ -183,6 +186,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: Attack
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Dead
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4357409880076075352}
