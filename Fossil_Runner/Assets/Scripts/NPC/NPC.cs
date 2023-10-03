@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public enum AIState  //ai»óÅÂ
+public enum AIState  //aiï¿½ï¿½ï¿½ï¿½
 {
     Idle,
     Wandering,
@@ -29,24 +29,24 @@ public class NPC : MonoBehaviour//, IDamagable
     public PlayerController player;
 
     public AnimalType type;
-    public GameObject mySelf;  //ÀÚ±â ÀÚ½ÅÀ»´ã´Â º¯¼ö
-    public List<GameObject> dropItem = new List<GameObject>();  //¶³¾îÆ®¸± ¾ÆÀÌÅÛÀ» ´ã´Â º¯¼ö
-    Vector3 itemPosition; //¾ÆÀÌÅÛÀ» ¶³¾îÆ®¸®±â À§ÇÑ À§Ä¡
+    public GameObject mySelf;  //ï¿½Ú±ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public List<GameObject> dropItem = new List<GameObject>();  //ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    Vector3 itemPosition; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
 
     [Header("Stats")]
     public int health;
     public float walkSpeed;
     public float runSpeed;
-    // public ItemData[] dropOnDeath;  Á×À¸¸é ¶³¾î¶ß¸®´Â °Í
+    // public ItemData[] dropOnDeath;  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½ï¿½
 
     [Header("AI")]
     private AIState aiState;
-    public float detectDistance;  //Å½Áö°Å¸®
-    public float safeDistance;   //¾ÈÀü°Å¸®
+    public float detectDistance;  //Å½ï¿½ï¿½ï¿½Å¸ï¿½
+    public float safeDistance;   //ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½
 
     [Header("Wandering")]
-    public float minWanderDistance;  //¹æÈ² ÃÖ¼Ò°Å¸® 
-    public float maxWanderDistance;  // ¹æÈ² ÃÖ´ë°Å¸®
+    public float minWanderDistance;  //ï¿½ï¿½È² ï¿½Ö¼Ò°Å¸ï¿½ 
+    public float maxWanderDistance;  // ï¿½ï¿½È² ï¿½Ö´ï¿½Å¸ï¿½
     public float minWanderWaitTime;
     public float maxWanderWaitTime;
 
@@ -77,16 +77,16 @@ public class NPC : MonoBehaviour//, IDamagable
     {
         HPbar.maxValue = health;
         HPbar.minValue = 0;
-        SetState(AIState.Wandering);  //Ã³À½¿¡ ¹æÈ²À¸·Î ½ÃÀÛ
+        SetState(AIState.Wandering);  //Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     private void Update()
     {
         HPbar.value = health;
-        // ½Ã¾Æ°¢ ÇØ°á ¹®Á¦ ¾øÀ½ º»Ã¼¶û ²¿¸®¶û ²¨²Ù·Î µÇÀÖ¾ú´Ù.  Debug.Log(IsPlaterInFireldOfView());
-        playerDistance = Vector3.Distance(transform.position, player.transform.position); //ÇÃ·¹ÀÌ¾î¿Í ÀÚ½Å»çÀÌÀÇ °Å¸®
-        // ¿©±â´Â ¹®Á­¾øÀ½ Debug.Log(playerDistance);
-        animator.SetBool("Moving", aiState != AIState.Idle);//°¡¸¸È÷ ÀÖ´Â°ÍÀÌ ¾Æ´Ï¸é ¿òÁ÷ÀÌ±â
+        // ï¿½Ã¾Æ°ï¿½ ï¿½Ø°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½.  Debug.Log(IsPlaterInFireldOfView());
+        playerDistance = Vector3.Distance(transform.position, player.transform.position); //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½Ú½Å»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Debug.Log(playerDistance);
+        animator.SetBool("Moving", aiState != AIState.Idle);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Â°ï¿½ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
 
         switch (aiState)
         {
@@ -100,9 +100,9 @@ public class NPC : MonoBehaviour//, IDamagable
 
     private void FleeingUpdate()
     {
-        if (agent.remainingDistance < 0.1f)  //ÀÌµ¿°Å¸®°¡ °¡±î¿ì¸é
+        if (agent.remainingDistance < 0.1f)  //ï¿½Ìµï¿½ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            agent.SetDestination(GetFleeLocation()); //¸ñÀûÁö¸¦ Ã£±â
+            agent.SetDestination(GetFleeLocation()); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
         }
         else
         {
@@ -116,9 +116,9 @@ public class NPC : MonoBehaviour//, IDamagable
         {
             agent.isStopped = false;
             NavMeshPath path = new NavMeshPath();
-            if (agent.CalculatePath(player.transform.position, path)) //°æ·Î¸¦ »õ·Î°Ë»öÇÑ´Ù.
+            if (agent.CalculatePath(player.transform.position, path)) //ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½Î°Ë»ï¿½ï¿½Ñ´ï¿½.
             {
-                agent.SetDestination(player.transform.position); //¸ñÀû±â¸¦ Ã£±â
+                agent.SetDestination(player.transform.position); //ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ Ã£ï¿½ï¿½
             }
             else
             {
@@ -127,13 +127,13 @@ public class NPC : MonoBehaviour//, IDamagable
         }
         else
         {
-            //Debug.Log("³ª°ø°Ý");
-            agent.isStopped = true;  //µ¥¹ÌÁö¸¦ ÀÔÇÏ´Â ºÎºÐ 
+            //Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+            agent.isStopped = true;  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Îºï¿½ 
             if (Time.time - lastAttackTime > attackRate)
             {
                 lastAttackTime = Time.time;
-                //Player.health -= 10;//¿©±âºÎºÐ ½ºÅÂÆ½À¸·Î ÇÏ±â
-                                    // Debug.Log("Ã¼·Â : " + Player.health);
+                //Player.health -= 10;//ï¿½ï¿½ï¿½ï¿½Îºï¿½ ï¿½ï¿½ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï±ï¿½
+                                    // Debug.Log("Ã¼ï¿½ï¿½ : " + Player.health);
                                     // PlayerController.instance.GetComponent<IDamagable>().TakePhysicalDamage(damage);
                 animator.speed = 1;
                 animator.SetTrigger("Attack");
@@ -143,32 +143,32 @@ public class NPC : MonoBehaviour//, IDamagable
 
     private void PassiveUpdate()
     {
-        if (aiState == AIState.Wandering && agent.remainingDistance < 0.1f) //¹æÈ²ÇÏ´Â ÁßÀÌ°í, ³²Àº°Å¸®°¡ 0.1º¸´Ù ÀÛ´Ù
+        if (aiState == AIState.Wandering && agent.remainingDistance < 0.1f) //ï¿½ï¿½È²ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ 0.1ï¿½ï¿½ï¿½ï¿½ ï¿½Û´ï¿½
         {
-            //Debug.Log("µ¶¼ö¸®²¨" + agent.remainingDistance);
+            //Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + agent.remainingDistance);
             SetState(AIState.Idle);
-            Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime)); //»õ·Î¿î ·ÎÄÉÀÌ¼ÇÇÏ´Â °ÍÀÌ Áö¿¬½ÃÅ°´Â °Í
+            Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime)); //ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½
         }
-        // Debug.Log("ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸® : " + playerDistance);
-        // Debug.Log("Å½Áö °Å¸® : " + detectDistance);
+        // Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ : " + playerDistance);
+        // Debug.Log("Å½ï¿½ï¿½ ï¿½Å¸ï¿½ : " + detectDistance);
         // Debug.Log(playerDistance < detectDistance);
 
 
-        if (playerDistance < detectDistance)  //°Å¸®¾È¿¡ µé¿À¾Ò´Ù¸é
+        if (playerDistance < detectDistance)  //ï¿½Å¸ï¿½ï¿½È¿ï¿½ ï¿½ï¿½ï¿½ï¿½Ò´Ù¸ï¿½
         {
-            // Debug.Log("°ø°Ý¹üÀ§¾È¿¡ ¿Ô¾î");
+            // Debug.Log("ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½È¿ï¿½ ï¿½Ô¾ï¿½");
             SetState(AIState.Attacking);
         }
     }
 
-    bool IsPlaterInFireldOfView() //½Ã¾Æ°¢¿¡ µé¾î¿À´ÂÁö
+    bool IsPlaterInFireldOfView() //ï¿½Ã¾Æ°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
-        Vector3 directionToPlayer = player.transform.position - transform.position;//°Å¸®±¸ÇÏ±â
+        Vector3 directionToPlayer = player.transform.position - transform.position;//ï¿½Å¸ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
         float angle = Vector3.Angle(transform.forward, directionToPlayer);
         return angle < fieldOfView * 0.5f;
     }
 
-    private void SetState(AIState newState) //°õµ¹ÀÌ »óÅÂ¿¡ µû¶ó º¯È­ ±¸ÇÏ±â
+    private void SetState(AIState newState) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ ï¿½ï¿½ï¿½Ï±ï¿½
     {
         aiState = newState;
         switch (aiState)
@@ -203,7 +203,7 @@ public class NPC : MonoBehaviour//, IDamagable
         animator.speed = agent.speed / walkSpeed;
     }
 
-    void WanderToNewLocation()  //»õ·Î¿î °Å¸®¸¦ ±¸ÇÏ´Â ¹æ¹ý
+    void WanderToNewLocation()  //ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
     {
         if (aiState != AIState.Idle)
         {
@@ -221,7 +221,7 @@ public class NPC : MonoBehaviour//, IDamagable
         NavMesh.SamplePosition(transform.position + (Random.onUnitSphere * Random.Range(minWanderDistance, maxWanderDistance)), out hit, maxWanderDistance, NavMesh.AllAreas);
 
         int i = 0;
-        while (Vector3.Distance(transform.position, hit.position) < detectDistance) //hit¿Í ÇØ´çÀ§Ä¡ÀÇ °Å¸®°¡ Å½Áö°Å¸®º¸´Ù ÀÛ´Ù¸é
+        while (Vector3.Distance(transform.position, hit.position) < detectDistance) //hitï¿½ï¿½ ï¿½Ø´ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ Å½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û´Ù¸ï¿½
         {
             NavMesh.SamplePosition(transform.position + (Random.onUnitSphere * Random.Range(minWanderDistance, maxWanderDistance)), out hit, maxWanderDistance, NavMesh.AllAreas);
             i++;
@@ -264,7 +264,7 @@ public class NPC : MonoBehaviour//, IDamagable
         {
             Weapon weapon = other.GetComponent<Weapon>();
             health -= weapon.damage;
-            Debug.Log("¸ó½ºÅÍ Ã¼·Â : " + health);
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ : " + health);
             StartCoroutine(DamageFlash());
         }
 
@@ -272,7 +272,7 @@ public class NPC : MonoBehaviour//, IDamagable
         //{
         //    Bullet bullet = other.GetComponent<Bullet>();
         //    health -= bullet.damage;
-        //    Debug.Log("¸ó½ºÅÍ Ã¼·Â : " + health);
+        //    Debug.Log("ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ : " + health);
         //}
         if (health <= 0)
         {
@@ -315,13 +315,13 @@ public class NPC : MonoBehaviour//, IDamagable
             int num = Random.Range(0, dropItem.Count);
             GameObject go = Instantiate(dropItem[num], itemPosition, Quaternion.identity);
             //Debug.Log(itemPosition);
-            go.GetComponent<Rigidbody>().AddForce(transform.up * 20, ForceMode.Impulse); //Áß·ÂÀ» ²¯´Ù°¡ Å°¸é ±¦ÂúÀ» ¼öµµ?
+            go.GetComponent<Rigidbody>().AddForce(transform.up * 20, ForceMode.Impulse); //ï¿½ß·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù°ï¿½ Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½?
 
-            //·£´ýÀ¸·Î ÇÒ·Á¸é for¹® µ¹·Á¼­ÇÏ°Å³ª È¿°ú¸¦ ÁÖ¸é µÉµí
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ forï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°Å³ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¸ï¿½ ï¿½Éµï¿½
         }
     }
 
-        IEnumerator DamageFlash() //±ô±îÀÌ´Â °ÍÀÓ.
+        IEnumerator DamageFlash() //ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½.
     {
         for (int x = 0; x < meshRenderers.Length; x++)
             meshRenderers[x].material.color = new Color(1.0f, 0.6f, 0.6f);
