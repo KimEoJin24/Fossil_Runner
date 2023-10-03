@@ -12290,7 +12290,7 @@ MonoBehaviour:
   dragon1Pos: {fileID: 1419674629}
   dragon2Pos: {fileID: 854363649}
   Fire: {fileID: 205669207}
-  health: 15
+  health: 500
   walkSpeed: 25
   runSpeed: 50
   detectDistance: 80
