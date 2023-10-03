@@ -20272,6 +20272,18 @@ PrefabInstance:
       propertyPath: meter
       value: 
       objectReference: {fileID: 8669619849387476086}
+    - target: {fileID: 2117006236781663165, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
+      propertyPath: attackStamina
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117006236781663165, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
+      propertyPath: useRunStamina
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117006236781663165, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
+      propertyPath: stamina.decayRage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3816153242953308780, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
