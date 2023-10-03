@@ -68,7 +68,7 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         {
             health.Subtract(noThirstyHealthDecay * Time.deltaTime);
         }
-        if (health.curValue == 0.0f)
+        if (health.curValue <= 0.0f)
         {
             Die();
         }
