@@ -874,6 +874,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 60
+  mySelf: {fileID: 8392353773351463208}
+  dropItem:
+  - {fileID: 4856306437467914173, guid: 8b1593f8ebcbd68448965f6441fea1b7, type: 3}
+  - {fileID: 4856306437467914173, guid: 8b1593f8ebcbd68448965f6441fea1b7, type: 3}
+  - {fileID: 0}
 --- !u!1 &8641580788953950455
 GameObject:
   m_ObjectHideFlags: 0
