@@ -40,7 +40,7 @@ public class OpenReword : MonoBehaviour
             //dropItem.Count;
             int num = Random.Range(0, dropItem.Count);
             GameObject go = Instantiate(dropItem[num], itemPosition, Quaternion.identity);
-            go.transform.localScale = new Vector3(7, 7, 7);
+            go.transform.localScale = new Vector3(15, 15, 15);
             //Debug.Log(go.transform.localScale);
             go.GetComponent<Rigidbody>().AddForce(transform.up * 5, ForceMode.Impulse);
 
