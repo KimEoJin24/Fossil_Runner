@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3738170762527037627}
   m_Layer: 9
   m_Name: Equip_Hammer
-  m_TagString: Untagged
+  m_TagString: Melee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,13 +27,13 @@ Transform:
   m_GameObject: {fileID: 4147716513744851619}
   m_LocalRotation: {x: 0.64031124, y: -0.011463941, z: -0.6441513, w: 0.41825745}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6710737663459986925}
   - {fileID: 1790947104343038674}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 148.61, y: 102.155, z: 40.423004}
 --- !u!114 &124096476798997224
 MonoBehaviour:
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackType: 0
-  damage: 0
-  rate: 0
+  damage: 40
+  rate: 1.5
   meleeArea: {fileID: -3738170762527037627}
   trailEffect: {fileID: 2043235568969547261}
 --- !u!65 &-3738170762527037627

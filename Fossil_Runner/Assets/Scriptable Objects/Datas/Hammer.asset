@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Hammer
   m_EditorClassIdentifier: 
   displayName: "\uB4EC\uC9C1\uD55C \uD5E4\uBA38"
-  description: "3\uB300 500 \uBBF8\uB9CC\uC740 \uAE08\uC9C0\uD569\uB2C8\uB2E4."
+  description: "\uC7AC\uD6C8\uB2D8\uBD80\uD130 \uC0AC\uC6A9 \uAC00\uB2A5!"
   type: 1
   icon: {fileID: 21300000, guid: 3e80777f82efa85488d0dc9d6c0e854b, type: 3}
-  dropPrefab: {fileID: 0}
+  dropPrefab: {fileID: 958357033395984650, guid: d844571e39332c44b998bb19777c7b8a, type: 3}
   canStack: 0
   maxStackAmount: 0
   consumables: []
-  equipPrefab: {fileID: 5682816296153812889, guid: c34fccc51b0f61e44a4af5e315bb60ca, type: 3}
+  equipPrefab: {fileID: 4147716513744851619, guid: d5fa2336e648c644a802832da0d213f0, type: 3}

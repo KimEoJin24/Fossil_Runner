@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 212358921744014021}
   m_Layer: 9
   m_Name: Equip_Sword
-  m_TagString: Untagged
+  m_TagString: Melee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,13 +27,13 @@ Transform:
   m_GameObject: {fileID: 8152488284455778883}
   m_LocalRotation: {x: 0.5413449, y: 0.36931533, z: -0.5665504, w: 0.4995724}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1555573785933584235}
   - {fileID: 7065671136324935837}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 106.392, y: 120, z: 36.084}
 --- !u!114 &9119539122492085111
 MonoBehaviour:
