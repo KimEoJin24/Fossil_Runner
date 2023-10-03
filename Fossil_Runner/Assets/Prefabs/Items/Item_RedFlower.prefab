@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7231479525720606438}
   - component: {fileID: 3334437448957339571}
   - component: {fileID: 4159322106293821228}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item_RedFlower
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -28,12 +28,12 @@ Transform:
   m_GameObject: {fileID: 5369288221150236692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.1476822, y: 0.762519, z: 0.8326385}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1419481363804423202}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &7231479525720606438
 Rigidbody:
@@ -151,6 +151,14 @@ PrefabInstance:
     - target: {fileID: 2594766243793620232, guid: 4d1f930728eb81f499eefd1f6d4db221, type: 3}
       propertyPath: m_Name
       value: Flower1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594766243793620232, guid: 4d1f930728eb81f499eefd1f6d4db221, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594766243793620232, guid: 4d1f930728eb81f499eefd1f6d4db221, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
