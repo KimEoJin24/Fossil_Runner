@@ -222,5 +222,6 @@ public class ReSpwanManager : MonoBehaviour
     public void ResPwanHealth()
     {
         playerConditions.health.curValue = 50;
+       // playerConditions._animator.SetBool("Dead", false);
     }
 }
