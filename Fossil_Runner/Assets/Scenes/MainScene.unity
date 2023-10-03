@@ -7304,6 +7304,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Intro Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4908925959078079596, guid: b4751f72b96b1c04a828ec1a1ff30829, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1471718420}
+    - target: {fileID: 4908925959078079596, guid: b4751f72b96b1c04a828ec1a1ff30829, type: 3}
+      propertyPath: _mainCam
+      value: 
+      objectReference: {fileID: 4527609027554065585}
+    - target: {fileID: 4908925959078079596, guid: b4751f72b96b1c04a828ec1a1ff30829, type: 3}
+      propertyPath: _menuCam
+      value: 
+      objectReference: {fileID: 1863621954}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21024,6 +21036,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 533920316}
   m_SourcePrefab: {fileID: 100100000, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
+--- !u!1 &4527609027554065585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4543016998764181955, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
+  m_PrefabInstance: {fileID: 4527609027554065584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4918437573294544199
 PrefabInstance:
   m_ObjectHideFlags: 0
