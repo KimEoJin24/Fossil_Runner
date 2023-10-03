@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: RedFlower
   m_EditorClassIdentifier: 
   displayName: "\uD2A4\uB9BD"
-  description: "\uC27D\uAC8C \uBCFC \uC218 \uC788\uB294 \uAF43"
+  description: "\uC774\uC2AC\uC774 \uAE43\uB4E0 \uAF43"
   type: 0
   icon: {fileID: 21300000, guid: af5ecc5b0df4a0e49be02952acafc784, type: 3}
   dropPrefab: {fileID: 5369288221150236692, guid: 1f44a7c0c7cfd6046b794e23c9247795, type: 3}
   canStack: 1
   maxStackAmount: 99
-  consumables: []
+  consumables:
+  - type: 2
+    value: 20
   equipPrefab: {fileID: 0}
