@@ -14,10 +14,17 @@ public class NPC_Boss : MonoBehaviour
         Attacking,
         Fleeing
     }
+    public OpenReword openReword;
 
     public GameObject hpBar;
     public Slider hp;
     public TextMeshProUGUI hpText;
+
+
+    public GameObject mySelf;  
+    public List<GameObject> dropItem = new List<GameObject>();  
+    Vector3 itemPosition; 
+
 
     public AudioSource mySfx;
     public AudioClip skill4;
@@ -309,6 +316,7 @@ public class NPC_Boss : MonoBehaviour
             Weapon weapon = other.GetComponent<Weapon>();
             health -= weapon.damage;
             Debug.Log("몬스터 체력 : " + health);
+            StartCoroutine(DamageFlash());
         }
 
         if (other.tag == "Bullet")
@@ -320,15 +328,18 @@ public class NPC_Boss : MonoBehaviour
         if (health <= 0)
         {
             attackRate = 20;
+            openReword.Open();
+            
             StartCoroutine(DieAni());
+            
             // animator.SetTrigger("Die");
             // Invoke("Die", 7);
             //Invoke("Respwan",4);
             // Die();
-            DropItem();
+           // DropItem();
 
         }
-        StartCoroutine(DamageFlash());
+        
     }
     //public void TakePhysicalDamage(int damageAmount)
     //{
@@ -363,13 +374,25 @@ public class NPC_Boss : MonoBehaviour
     {
         animator.SetBool("Die", true);
         yield return new WaitForSeconds(8f);
+        DropItem();
         Destroy(gameObject);
     }
 
 
     public void DropItem()
     {
+        for (int i = 0; i < dropItem.Count; i++)
+        {
+            //itemPosition = mySelf.transform.position + new Vector3(0, 5, 0);
+            //dropItem.Count;
+            int num = Random.Range(0, dropItem.Count);
+            GameObject go = Instantiate(dropItem[num], mySelf.transform.position, Quaternion.identity);
+            go.transform.localScale = new Vector3(7, 7, 7);
+            //Debug.Log(go.transform.localScale);
+            go.GetComponent<Rigidbody>().AddForce(transform.up * 5, ForceMode.Impulse); 
 
+            
+        }
     }
 
     void CallBabyDragon()

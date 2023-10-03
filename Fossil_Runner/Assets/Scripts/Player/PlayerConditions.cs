@@ -37,7 +37,7 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public float noThirstyHealthDecay;
     public bool useRunStamina;
     public float attackStamina;
-    
+
     private Animator _animator;
     private PlayerController _controller;
 
