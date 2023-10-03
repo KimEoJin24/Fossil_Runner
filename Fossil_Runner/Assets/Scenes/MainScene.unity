@@ -6129,6 +6129,8 @@ MonoBehaviour:
   BossDino: {fileID: 893411686591906312, guid: c66be8d6ca4c82946a7028eee483f317, type: 3}
   BossDinoNum: 8
   BossDinoRespwanPos: {fileID: 588076515}
+  playerPos: {fileID: 1471718420}
+  PlayerRespwanPos: {fileID: 1285296102}
   player: {fileID: 5521888832759806792}
   playerConditions: {fileID: 8449220944950173193}
 --- !u!4 &748956566
@@ -6148,6 +6150,7 @@ Transform:
   - {fileID: 1528930029}
   - {fileID: 1592219911}
   - {fileID: 588076515}
+  - {fileID: 1285296102}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10262,6 +10265,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.000002, y: 0.0000006039833, z: 8.000002}
   m_Center: {x: 0, y: -0.0000019073486, z: 0}
+--- !u!1 &1285296101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1285296102}
+  m_Layer: 0
+  m_Name: PlayerReSpwanPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1285296102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285296101}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 462.77283, y: -125.11, z: 638.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 748956566}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1286398374 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4398583031963714186, guid: 6c95ce92f8df18e4581cc0c4db2058be, type: 3}
