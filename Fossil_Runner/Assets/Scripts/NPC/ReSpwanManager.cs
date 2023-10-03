@@ -25,6 +25,10 @@ public class ReSpwanManager : MonoBehaviour
     public int BossDinoNum;  //°ø·æ ¼ö
     public Transform BossDinoRespwanPos;
 
+    public GameObject playerPos;  
+    public Transform PlayerRespwanPos;
+
+
 
 
     public PlayerController player;
@@ -49,6 +53,7 @@ public class ReSpwanManager : MonoBehaviour
 
     private void Start()
     {
+        StartPlayerRespwan();
         StartSetBearNum();
         StartSetFoxNum();
         StartSetEagleNum();
@@ -59,7 +64,7 @@ public class ReSpwanManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        PlayerRespwan();
         UpdateBearNum();
         UpdateFoxNum();
         UpdateEagleNum();
@@ -198,5 +203,24 @@ public class ReSpwanManager : MonoBehaviour
         {
             BossDinoRespwan();
         }
+    }
+
+    void PlayerRespwan()
+    {
+        if(playerConditions.health.curValue <= 0)
+        {
+            Invoke("StartPlayerRespwan",4);
+            Invoke("ResPwanHealth", 4);
+
+        }
+    }
+
+    public void StartPlayerRespwan()
+    {
+        playerPos.transform.position = PlayerRespwanPos.position;
+    }
+    public void ResPwanHealth()
+    {
+        playerConditions.health.curValue = 50;
     }
 }
