@@ -414,6 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HPbar: {fileID: 5362750176034378526}
   player: {fileID: 0}
+  playerConditions: {fileID: 0}
   type: 3
   mySelf: {fileID: 893411686591906312}
   dropItem:
@@ -432,7 +433,7 @@ MonoBehaviour:
   maxWanderWaitTime: 2
   damage: 5
   attackRate: 1.5
-  attackDistance: 20
+  attackDistance: 7
   fieldOfView: 120
 --- !u!1 &959427928989033506
 GameObject:

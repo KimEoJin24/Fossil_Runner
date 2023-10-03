@@ -28,4 +28,5 @@ public class GoPotal : MonoBehaviour
         Debug.Log("파티클 충돌");
 
     }
+
 }
