@@ -21,10 +21,6 @@ public class ReSpwanManager : MonoBehaviour
     public int dinoNum;  //공룡 수
     public Transform dinoRespwanPos;
 
-    public GameObject BossDino; //보스를 가기위한 메서드
-    public int BossDinoNum;  //공룡 수
-    public Transform BossDinoRespwanPos;
-
 
 
     public PlayerController player;
@@ -52,7 +48,7 @@ public class ReSpwanManager : MonoBehaviour
         StartSetFoxNum();
         StartSetEagleNum();
         StartSetDinoNum();
-        StartSetBossDinoNum();
+
     }
 
     // Update is called once per frame
@@ -175,21 +171,6 @@ public class ReSpwanManager : MonoBehaviour
         {
             dinoNum++;
             Invoke("DinoRespwan", 4);
-        }
-    }
-
-    void BossDinoRespwan()
-    {
-        scale = Random.Range(0.1f, 0.3F);
-        GameObject dinos = Instantiate(dino, BossDinoRespwanPos.position, Quaternion.identity);
-        dinos.GetComponent<NPC>().player = player;
-        dinos.transform.localScale = new Vector3(scale, scale, scale);
-    }
-    public void StartSetBossDinoNum()
-    {
-        for (int i = 0; i < dinoNum; i++)
-        {
-            BossDinoRespwan();
         }
     }
 }

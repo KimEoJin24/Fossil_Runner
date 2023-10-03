@@ -226,7 +226,7 @@ Transform:
   - {fileID: 3031806114577870715}
   - {fileID: 20067906367359635}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8173546155161589603
 BoxCollider:
@@ -247,8 +247,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 10, z: 16.54}
-  m_Center: {x: 0, y: 5.94, z: 0}
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 3.95, z: 0}
 --- !u!195 &1669585729920306467
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -288,9 +288,6 @@ MonoBehaviour:
   type: 0
   mySelf: {fileID: 1634812848518376115}
   dropItem:
-  - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
-  - {fileID: 322228960878561350, guid: 1e853a98a1cc0484fbfc0b0d0ff43a82, type: 3}
-  - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
   - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
   health: 70
   walkSpeed: 8

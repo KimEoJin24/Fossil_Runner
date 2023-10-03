@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7475687366430545875}
+  - component: {fileID: 6317872753942784313}
   - component: {fileID: 914104655572645006}
   - component: {fileID: 7212794218041604076}
-  - component: {fileID: 3521669342168760662}
   m_Layer: 0
   m_Name: Eagle
   m_TagString: Untagged
@@ -34,8 +34,29 @@ Transform:
   - {fileID: 5982626927741397539}
   - {fileID: 7229201762629726850}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6317872753942784313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202033569980889033}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!195 &914104655572645006
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -74,9 +95,7 @@ MonoBehaviour:
   player: {fileID: 0}
   type: 2
   mySelf: {fileID: 202033569980889033}
-  dropItem:
-  - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
-  - {fileID: 322228960878561350, guid: 1e853a98a1cc0484fbfc0b0d0ff43a82, type: 3}
+  dropItem: []
   health: 20
   walkSpeed: 6
   runSpeed: 30
@@ -88,29 +107,8 @@ MonoBehaviour:
   maxWanderWaitTime: 2
   damage: 5
   attackRate: 1.5
-  attackDistance: 20
+  attackDistance: 10
   fieldOfView: 120
---- !u!65 &3521669342168760662
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202033569980889033}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 21.8, y: 15.83, z: 28.3}
-  m_Center: {x: 0, y: 32.4, z: 0}
 --- !u!1 &235406200030328979
 GameObject:
   m_ObjectHideFlags: 0
