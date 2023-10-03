@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using static System.Net.Mime.MediaTypeNames;
+using static UnityEditor.Progress;
 
 public class Combination : MonoBehaviour
 {
@@ -49,6 +51,9 @@ public class Combination : MonoBehaviour
     }
     public void SelectItem(int index)  // 누른 것에 대한 인덱스 번호만 찾아줘용
     {
+        RequiredMaterialsName.text = "";
+        RequiredMaterialsNum.text = "";
+        MyMaterialsNum.text = "";
 
 
         //if (slots[index].item == null)
@@ -67,15 +72,23 @@ public class Combination : MonoBehaviour
         //selectedItemStatNames.text = string.Empty;
         //selectedItemStatValues.text = string.Empty;
 
-        //for (int i = 0; i < selectedItem.item.consumables.Length; i++) //길면뛰는 메서드인듯
-        //{
-        //    selectedItemStatNames.text += selectedItem.item.consumables[i].type.ToString() + "\n";
-        //    selectedItemStatValues.text += selectedItem.item.consumables[i].value.ToString() + "\n";
-        //}
+        for (int i = 0; i < datas[index].needMatrials.Length; i++) //길면뛰는 메서드인듯
+        {
+            RequiredMaterialsName.text += datas[index].needMatrials[i].ToString() + "\n";
+            RequiredMaterialsNum.text += datas[index].matrialsNum[i].ToString() + "\n";
+           // MyMaterialsNum.text += Inventory.instance.GetItemStackNum("나무조각").ToString() + "\n";
+
+            // MyMaterialsNum.text += Inventory.instance.GetItemStackNum(datas[index].needMatrials[i]).ToString() + "\n";
+        }
 
         //useButton.SetActive(selectedItem.item.type == ItemType.Consumable);
         //equipButton.SetActive(selectedItem.item.type == ItemType.Equipable && !uiSlots[index].equipped);
         //unEquipButton.SetActive(selectedItem.item.type == ItemType.Equipable && uiSlots[index].equipped);
         //dropButton.SetActive(true);
+    }
+
+    public void StackNum()
+    {
+        //Inventory.instance.GetItemStackNum()
     }
 }

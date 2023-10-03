@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\uB4EC\uC9C1\uD55C \uD5E4\uBA38"
   description: "3\uB300 500 \uBBF8\uB9CC\uC740 \uAE08\uC9C0\uD569\uB2C8\uB2E4."
-  needMatrials: "\uB098\uBB34 \uB3CC"
-  matrialsNum: 0
+  needMatrials:
+  - "\uB098\uBB34\uC870\uAC01"
+  - "\uBCF4\uB77C\uC0C9 \uBC84\uC12F"
+  matrialsNum: 0400000004000000
   type: 1
   icon: {fileID: 21300000, guid: 3e80777f82efa85488d0dc9d6c0e854b, type: 3}
   dropPrefab: {fileID: 0}

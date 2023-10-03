@@ -15,8 +15,10 @@ MonoBehaviour:
   displayName: "\uB0A1\uC740 \uB3C4\uB07C"
   description: "\uB69D\uBC30\uAE30, \uC544... \uB098\uBB34 \uBCA0\uB294\uB370\uB9CC 
     \uC0AC\uC6A9\uD574 \uC8FC\uC138\uC694."
-  needMatrials: "\uB098\uBB34 \uB3CC"
-  matrialsNum: 0
+  needMatrials:
+  - "\uB098\uBB34\uC870\uAC01"
+  - "\uB3CC"
+  matrialsNum: 0100000002000000
   type: 1
   icon: {fileID: 21300000, guid: 06e8d836c76eb494db7ab3784ffcb0eb, type: 3}
   dropPrefab: {fileID: 958357033395984650, guid: 67d53ce7ff4dcd3449f3805576e4ee8e, type: 3}

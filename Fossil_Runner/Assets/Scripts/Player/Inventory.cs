@@ -149,6 +149,20 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
+    public int GetItemStackNum(string ItemName)  //스택수 구하는 수
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i] != null)
+            {
+                if (slots[i].item.displayName == ItemName)
+                    return slots[i].quantity;
+            }
+           
+        }
+        return 0;
+    }
+
     ItemSlot GetEmptySlot()
     {
         for (int i = 0; i < slots.Length; i++)
