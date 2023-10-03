@@ -15,7 +15,7 @@ public class ItemSlotUI : MonoBehaviour
     public int index;
     public bool equipped;
 
-    
+
 
     private void Awake()
     {

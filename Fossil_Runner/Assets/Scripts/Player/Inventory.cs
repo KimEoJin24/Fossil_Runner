@@ -213,60 +213,75 @@ public class Inventory : MonoBehaviour
                         condition.Heal(selectedItem.item.consumables[i].value); break;
                     case ConsumableType.Thirsty:
                         condition.Drink(selectedItem.item.consumables[i].value); break;
-
                 }
             }
+        }
+        RemoveSelectedItem();
+    }
 
-            RemoveSelectedItem();
+    public void OnEquipButton() // 30강
+    {
+        if (uiSlots[curEquipIndex].equipped)
+        {
+            UnEquip(curEquipIndex);
         }
 
-        void OnEquipButton()
-        {
+        uiSlots[selectedItemIndex].equipped = true;
+        curEquipIndex = selectedItemIndex;
+        EquipManager.instance.EquipNew(selectedItem.item);
+        UpdateUI();
 
+        SelectItem(selectedItemIndex);
+    }
+
+    void UnEquip(int index) // 30강
+    {
+        uiSlots[index].equipped = false;
+        EquipManager.instance.UnEquip();
+        UpdateUI();
+
+        if (selectedItemIndex == index)
+        {
+            SelectItem(index);
         }
+    }
 
-        void UnEquip(int index)
+    public void OnUnEquipButton() // 30강
+    {
+        UnEquip(selectedItemIndex);
+    }
+
+    public void OnDropButton()
+    {
+        ThrowItem(selectedItem.item);
+        RemoveSelectedItem();
+    }
+
+    private void RemoveSelectedItem()
+    {
+        selectedItem.quantity--;
+
+        if (selectedItem.quantity <= 0)
         {
-
-        }
-
-        void OnUnEquipButton()
-        {
-
-        }
-
-        void OnDropButton()
-        {
-            ThrowItem(selectedItem.item);
-            RemoveSelectedItem();
-        }
-
-        void RemoveSelectedItem()
-        {
-            selectedItem.quantity--;
-
-            if (selectedItem.quantity <= 0)
+            if (uiSlots[selectedItemIndex].equipped)
             {
-                if (uiSlots[selectedItemIndex].equipped)
-                {
-                    UnEquip(selectedItemIndex);
-                }
-
-                selectedItem.item = null;
-                ClearSeletecItemWindow();
+                UnEquip(selectedItemIndex);
             }
 
-            UpdateUI();
+            selectedItem.item = null;
+            ClearSeletecItemWindow();
         }
 
-        void RemoveItem(ItemData item)
-        {
+        UpdateUI();
+    }
 
-        }
+    public void RemoveItem(ItemData item)
+    {
 
-        bool HasItems(ItemData item, int quantity)
-        {
-            return false;
-        }
+    }
+
+    public bool HasItems(ItemData item, int quantity)
+    {
+        return false;
     }
 }
