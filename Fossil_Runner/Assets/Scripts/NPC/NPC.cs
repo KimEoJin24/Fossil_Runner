@@ -27,7 +27,7 @@ public class NPC : MonoBehaviour//, IDamagable
     public Slider HPbar;
 
     public PlayerController player;
-
+    public PlayerConditions playerConditions;
     public AnimalType type;
     public GameObject mySelf;  //�ڱ� �ڽ������ ����
     public List<GameObject> dropItem = new List<GameObject>();  //����Ʈ�� �������� ��� ����
@@ -132,9 +132,11 @@ public class NPC : MonoBehaviour//, IDamagable
             if (Time.time - lastAttackTime > attackRate)
             {
                 lastAttackTime = Time.time;
+                playerConditions.health.curValue -= 3f;
+                Debug.Log("일반스킬로의 체력" + playerConditions.health.curValue);
                 //Player.health -= 10;//����κ� ����ƽ���� �ϱ�
-                                    // Debug.Log("ü�� : " + Player.health);
-                                    // PlayerController.instance.GetComponent<IDamagable>().TakePhysicalDamage(damage);
+                // Debug.Log("ü�� : " + Player.health);
+                // PlayerController.instance.GetComponent<IDamagable>().TakePhysicalDamage(damage);
                 animator.speed = 1;
                 animator.SetTrigger("Attack");
             }
@@ -260,6 +262,7 @@ public class NPC : MonoBehaviour//, IDamagable
 
     public void OnTriggerEnter(Collider other)
     {
+       
         if (other.tag == "Melee")
         {
             Weapon weapon = other.GetComponent<Weapon>();
@@ -314,8 +317,9 @@ public class NPC : MonoBehaviour//, IDamagable
             //dropItem.Count;
             int num = Random.Range(0, dropItem.Count);
             GameObject go = Instantiate(dropItem[num], itemPosition, Quaternion.identity);
-            //Debug.Log(itemPosition);
-            go.GetComponent<Rigidbody>().AddForce(transform.up * 20, ForceMode.Impulse); //�߷��� ���ٰ� Ű�� ������ ����?
+            go.transform.localScale = new Vector3(7, 7, 7);
+            //Debug.Log(go.transform.localScale);
+            go.GetComponent<Rigidbody>().AddForce(transform.up * 5, ForceMode.Impulse); //�߷��� ���ٰ� Ű�� ������ ����?
 
             //�������� �ҷ��� for�� �������ϰų� ȿ���� �ָ� �ɵ�
         }
