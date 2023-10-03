@@ -6,12 +6,14 @@ using UnityEngine.AI;
 public class BabyFireBall : MonoBehaviour
 {
     public Transform target;
+    PlayerConditions playerConditions;
     NavMeshAgent nav;
     ParticleSystem ps;
     // Start is called before the first frame update
     void Awake()
     {
         target = ReSpwanManager.Instance.player.transform;
+        playerConditions = ReSpwanManager.Instance.playerConditions;
         nav = GetComponent<NavMeshAgent>();
         ps = GetComponent<ParticleSystem>();
         Invoke("Destroy", 4);

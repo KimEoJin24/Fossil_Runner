@@ -5770,6 +5770,7 @@ MonoBehaviour:
   BossDinoNum: 8
   BossDinoRespwanPos: {fileID: 588076515}
   player: {fileID: 5521888832759806792}
+  playerConditions: {fileID: 8449220944950173193}
 --- !u!4 &748956566
 Transform:
   m_ObjectHideFlags: 0
