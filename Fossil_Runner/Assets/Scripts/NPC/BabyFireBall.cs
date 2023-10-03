@@ -33,8 +33,9 @@ public class BabyFireBall : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-          //  Player.health -= 2;
-          //  Debug.Log("불로맞은체력 " + Player.health);
+            playerConditions.health.curValue -= 1f;
+            //  Player.health -= 2;
+            //  Debug.Log("불로맞은체력 " + Player.health);
             Destroy(this.gameObject);
         }
     }
