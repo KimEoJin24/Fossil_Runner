@@ -224,7 +224,7 @@ Transform:
   - {fileID: 6648616146210699585}
   - {fileID: 8801440780237921724}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2842117180484018447
 MonoBehaviour:
@@ -244,6 +244,8 @@ MonoBehaviour:
   mySelf: {fileID: 1573687122451091320}
   dropItem:
   - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
+  - {fileID: 322228960878561350, guid: 1e853a98a1cc0484fbfc0b0d0ff43a82, type: 3}
+  - {fileID: 6080960948927018683, guid: 2abfb8b174696894da74170cc89c6c74, type: 3}
   health: 40
   walkSpeed: 20
   runSpeed: 50
@@ -276,8 +278,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.13, y: 1, z: 1.72}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!195 &6596803801037435859
 NavMeshAgent:
   m_ObjectHideFlags: 0
