@@ -5735,6 +5735,9 @@ MonoBehaviour:
   dino: {fileID: 893411686591906312, guid: c66be8d6ca4c82946a7028eee483f317, type: 3}
   dinoNum: 8
   dinoRespwanPos: {fileID: 1528930029}
+  BossDino: {fileID: 893411686591906312, guid: c66be8d6ca4c82946a7028eee483f317, type: 3}
+  BossDinoNum: 8
+  BossDinoRespwanPos: {fileID: 1401281972}
   player: {fileID: 5521888832759806792}
 --- !u!4 &748956566
 Transform:
@@ -5752,6 +5755,7 @@ Transform:
   - {fileID: 347327236}
   - {fileID: 1528930029}
   - {fileID: 1592219911}
+  - {fileID: 1401281972}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11065,6 +11069,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.000002, y: 0.0000006039833, z: 8.000002}
   m_Center: {x: -0.000015258789, y: -0.0000009536743, z: 0}
+--- !u!1 &1401281971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1401281972}
+  m_Layer: 0
+  m_Name: BossRoom2ReSpwanPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1401281972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401281971}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -165.02722, y: -137.76733, z: 1227.3762}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 748956566}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1402791681 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 540874378593095593, guid: 7b6585798a94f6149a6a76c871c669b3, type: 3}
