@@ -1210,7 +1210,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &137546996 stripped
 GameObject:
@@ -11856,7 +11856,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1288584411 stripped
 GameObject:
@@ -12270,14 +12270,6 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: b5acd70b977a5e242ba64cd028e869d8, type: 3}
   - name: "\uC0AC\uB0E5\uD130 \uBE0C\uAE08"
     audio: {fileID: 8300000, guid: 8eedc1e6d2635ab4a99e6a77e802cca6, type: 3}
---- !u!81 &1321899915
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321899910}
-  m_Enabled: 1
 --- !u!1 &1329474674 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4265190597247090657, guid: 7b6585798a94f6149a6a76c871c669b3, type: 3}
@@ -23768,9 +23760,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4543016998764181955, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1321899914}
-    - targetCorrespondingSourceObject: {fileID: 4543016998764181955, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1321899915}
     - targetCorrespondingSourceObject: {fileID: 6752481065214619551, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
       insertIndex: -1
       addedObject: {fileID: 533920317}
