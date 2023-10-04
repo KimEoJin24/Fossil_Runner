@@ -38,14 +38,14 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public bool useRunStamina;
     public float attackStamina;
 
-    private Animator _animator;
+    public Animator animator;
     private PlayerController _controller;
 
     public UnityEvent onTakeDamage;
 
     private void Awake()
     {
-        _animator = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
         _controller = GetComponent<PlayerController>();
     }
 
@@ -99,7 +99,7 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     {
         if (stamina.curValue - amount < 0)
         {
-            _animator.SetBool("Run", false);
+            animator.SetBool("Run", false);
             _controller.moveSpeed /= _controller.runSpeedRate;
             useRunStamina = false;
             return false;
@@ -111,13 +111,13 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public void Die()
     {
         Debug.Log("플레이어가 죽었다.");
-        _animator.SetBool("Dead", true);
+        animator.SetBool("Dead", true);
     }
 
     public void TakePhysicalDamage(float amount)
     {
         health.Subtract(amount);
         onTakeDamage?.Invoke();
-        _animator.SetTrigger("Pain");
+        animator.SetTrigger("Pain");
     }
 }

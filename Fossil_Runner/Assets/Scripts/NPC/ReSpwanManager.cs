@@ -6,23 +6,23 @@ public class ReSpwanManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject bear;
-    public int bearNum;  //°õµ¹ÀÌ ¼ö
+    public int bearNum;  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     public Transform bearRespwanPos;
 
     public GameObject fox;
-    public int foxNum;  //¿©¿ì ¼ö
+    public int foxNum;  //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     public Transform foxRespwanPos;
 
     public GameObject eagle;
-    public int eagleNum;  //µ¶¼ö¸® ¼ö
+    public int eagleNum;  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     public Transform eagleRespwanPos;
 
     public GameObject dino;
-    public int dinoNum;  //°ø·æ ¼ö
+    public int dinoNum;  //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     public Transform dinoRespwanPos;
 
     public GameObject BossDino;
-    public int BossDinoNum;  //°ø·æ ¼ö
+    public int BossDinoNum;  //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     public Transform BossDinoRespwanPos;
 
     public GameObject playerPos;  
@@ -35,7 +35,7 @@ public class ReSpwanManager : MonoBehaviour
     public PlayerConditions playerConditions;
     float scale;
 
-    public static ReSpwanManager Instance;  //½Ì±ÛÅæ ÁøÇà
+    public static ReSpwanManager Instance;  //ï¿½Ì±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
     // Start is called before the first frame update
