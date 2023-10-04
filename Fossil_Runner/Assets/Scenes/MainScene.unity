@@ -20739,7 +20739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackType: 0
-  damage: 10
+  damage: 100
   rate: 0.5
   meleeArea: {fileID: 533920316}
   trailEffect: {fileID: 1759234645}
@@ -53445,7 +53445,7 @@ MonoBehaviour:
   dragon1Pos: {fileID: 1419674629}
   dragon2Pos: {fileID: 854363649}
   Fire: {fileID: 205669207}
-  health: 10
+  health: 500
   walkSpeed: 25
   runSpeed: 50
   detectDistance: 80
@@ -86332,8 +86332,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2117006236781663165, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
+      propertyPath: health.maxValue
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117006236781663165, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
+      propertyPath: thirsty.maxValue
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117006236781663165, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
+      propertyPath: health.startValue
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117006236781663165, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
       propertyPath: stamina.decayRage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117006236781663165, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
+      propertyPath: thirsty.startValue
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3816153242953308780, guid: 8dc7c1d3a3fe3024a96f92ba62632037, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
