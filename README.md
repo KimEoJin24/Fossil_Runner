@@ -52,6 +52,31 @@
 https://www.youtube.com/watch?v=Le8jc3p3Z68
 
 ## 게임 방법
+![Main](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/90b17704-8b0f-4b02-8ed2-145e74400b28)
+
+![ConditionUI](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/2726a45e-f170-4a0e-823f-b92774aee749)
+
+![Dead](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/23e0b7e1-c6b1-47af-913a-5ad916ef2013)
+
+![KeyGuide](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/c163a791-4f75-4658-ba2e-6dc75310a399)
+
+![Attack&Interaction](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/b45ff12f-7def-4fa3-9f5d-3ce8665c4fca)
+
+![Inventory](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/11aa010c-a492-4515-b770-e50c39de4c9b)
+
+![Items](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/796e1bfa-46fd-4c40-8baa-c3c09b0f41b2)
+
+![Environment](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/b041eefd-fc54-49d2-b5e5-b7cd7d2ffc26)
+
+![Environment2](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/f1681ac0-fcc8-44f0-a801-8962660fc0c0)
+
+![Environment3](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/c31257a2-9eb1-4e48-bd28-5af899b468a5)
+
+![Environment4](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/dd63160f-327d-4b52-ae08-ba4b10a4cd08)
+
+![Environment5](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/986bf01c-417a-480c-ae73-068a41e1a6d0)
+
+![Boss](https://github.com/KimEoJin24/Fossil_Runner/assets/142365240/ee13e007-8981-436b-85d9-32c8468c22a7)
 
 ## 클래스 설명
 팀 노션 Framework를 참고해주세요.
