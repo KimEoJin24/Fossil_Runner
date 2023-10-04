@@ -293,7 +293,7 @@ MonoBehaviour:
   - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
   - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
   - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
-  health: 70
+  health: 40
   walkSpeed: 8
   runSpeed: 30
   detectDistance: 30

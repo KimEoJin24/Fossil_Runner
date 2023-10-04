@@ -21332,10 +21332,12 @@ MonoBehaviour:
   Dragon: {fileID: 1405186782}
   mySelf: {fileID: 546299837}
   dropItem:
-  - {fileID: 958357033395984650, guid: 67d53ce7ff4dcd3449f3805576e4ee8e, type: 3}
-  - {fileID: 5397719229500198610, guid: 1dc347e136844c34598a1a135df00e96, type: 3}
-  - {fileID: 5397719229500198610, guid: 1dc347e136844c34598a1a135df00e96, type: 3}
-  - {fileID: 5979598074787110352, guid: 3cdd25e8c398a7349bcc4e12a0fe73ae, type: 3}
+  - {fileID: 4856306437467914173, guid: cf74b48743fe80e4e9b9a3d3325cacf7, type: 3}
+  - {fileID: 4856306437467914173, guid: 5530e2c4a005f8f429ba40048bbfe0a7, type: 3}
+  - {fileID: 4856306437467914173, guid: 61cc35ed76897a04091ecd765ef9b3cb, type: 3}
+  - {fileID: 4856306437467914173, guid: edd53553d44326d409ac3d117db657d0, type: 3}
+  - {fileID: 4856306437467914173, guid: 5530e2c4a005f8f429ba40048bbfe0a7, type: 3}
+  - {fileID: 4856306437467914173, guid: 5530e2c4a005f8f429ba40048bbfe0a7, type: 3}
 --- !u!4 &546511359 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2464754855653995605, guid: d7375139d18121f4daae96053a84e4c9, type: 3}
@@ -53429,9 +53431,10 @@ MonoBehaviour:
   hpText: {fileID: 1266614206}
   mySelf: {fileID: 1405186782}
   dropItem:
-  - {fileID: 5397719229500198610, guid: 1dc347e136844c34598a1a135df00e96, type: 3}
-  - {fileID: 5979598074787110352, guid: 3cdd25e8c398a7349bcc4e12a0fe73ae, type: 3}
-  - {fileID: 5795414843540041059, guid: 5eb1660a71168e347b2d9d253332fd20, type: 3}
+  - {fileID: 4856306437467914173, guid: 5530e2c4a005f8f429ba40048bbfe0a7, type: 3}
+  - {fileID: 4856306437467914173, guid: 61cc35ed76897a04091ecd765ef9b3cb, type: 3}
+  - {fileID: 4856306437467914173, guid: edd53553d44326d409ac3d117db657d0, type: 3}
+  - {fileID: 4856306437467914173, guid: cf74b48743fe80e4e9b9a3d3325cacf7, type: 3}
   mySfx: {fileID: 1405186788}
   skill4: {fileID: 8300000, guid: b784295d6bcb6ab4bb20714dc9cb2626, type: 3}
   playerConditions: {fileID: 8449220944950173193}
@@ -55760,6 +55763,18 @@ PrefabInstance:
     - target: {fileID: 7343278917672312070, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443788818751298673, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
+      propertyPath: m_Size.x
+      value: 1503.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443788818751298673, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
+      propertyPath: m_Size.y
+      value: 171.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443788818751298673, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
+      propertyPath: m_Size.z
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6542879365146894867, guid: ace5df5c05d323c46bd82f30de253357, type: 3}
@@ -86112,6 +86127,14 @@ PrefabInstance:
     - target: {fileID: 3296244958929524526, guid: 7033a561485dc384dbd5e89deb45192e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546078996192883180, guid: 7033a561485dc384dbd5e89deb45192e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -72.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732211128142743255, guid: 7033a561485dc384dbd5e89deb45192e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7995735816462432174, guid: 7033a561485dc384dbd5e89deb45192e, type: 3}
       propertyPath: m_TargetGraphic
