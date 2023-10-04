@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPC_Tree : MonoBehaviour
 {
     public int health;
     private MeshRenderer[] meshRenderers;
-    public GameObject mySelf;
+    GameObject mySelf;
     Vector3 itemPosition;
     public List<GameObject> dropItem = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
+        mySelf = this.gameObject;
         meshRenderers = GetComponents<MeshRenderer>();
     }
 
